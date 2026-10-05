@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Sign in or create your Verdana Apothecary account to access your wellness plan, consultations, and orders."/>
+  <title>Login / Register — Verdana Apothecary</title>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B8F71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E"/>
+  <style>
+    .auth-page{min-height:100dvh;display:grid;grid-template-columns:1fr 1fr;}
+    .auth-visual{background:linear-gradient(135deg,var(--clr-forest-deep) 0%,var(--clr-forest) 100%);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:3rem;}
+    .auth-visual-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center top;opacity:0.2;}
+    .auth-panel{background:var(--bg-card);display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,5vw,5rem);overflow-y:auto;}
+    .tab-switcher{display:flex;background:var(--bg-primary);border-radius:var(--r-full);padding:4px;margin-bottom:2.5rem;border:1px solid var(--border-color);}
+    .tab-btn{flex:1;padding:0.75rem;border-radius:var(--r-full);font-family:var(--ff-body);font-size:0.875rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all 0.3s;background:none;border:none;text-align:center;}
+    .tab-btn.active{background:var(--clr-forest);color:#fff;box-shadow:0 4px 12px rgba(45,74,62,0.35);}
+    .social-login-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:0.75rem;padding:0.875rem 1.5rem;border-radius:var(--r-md);border:1.5px solid var(--border-color);background:var(--bg-card);font-family:var(--ff-body);font-size:0.875rem;font-weight:600;color:var(--text-primary);cursor:pointer;transition:all 0.3s;margin-bottom:0.75rem;}
+    .social-login-btn:hover{border-color:var(--clr-sage);box-shadow:var(--shadow-sm);}
+    .divider-text{display:flex;align-items:center;gap:1rem;margin:1.5rem 0;color:var(--text-secondary);font-size:0.8rem;}
+    .divider-text::before,.divider-text::after{content:'';flex:1;height:1px;background:var(--border-color);}
+    .password-toggle{position:absolute;right:1rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--text-secondary);font-size:1rem;padding:0.25rem;}
+    .strength-bar{height:4px;border-radius:4px;background:var(--border-color);overflow:hidden;margin-top:0.5rem;}
+    .strength-fill{height:100%;width:0;border-radius:4px;transition:width 0.5s ease,background 0.3s;}
+    .testimonial-slide{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-xl);padding:2rem;backdrop-filter:blur(8px);}
+  </style>
+</head>
+<body>
+
+<!-- Theme + RTL toggles only (logo moved into normal page flow, centered) -->
+<div style="position:fixed;top:1rem;right:1rem;z-index:100;display:flex;gap:0.75rem;align-items:center;">
+  <button class="theme-toggle" data-rtl-toggle aria-label="Switch to right-to-left layout" title="RTL / LTR" aria-pressed="false" style="background:var(--bg-card);border:1px solid var(--border-color);color:var(--text-primary);display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);"><span class="rtl-label" aria-hidden="true">RTL</span></button>
+  <button class="theme-toggle" data-theme-toggle style="background:var(--bg-card);border:1px solid var(--border-color);color:var(--text-primary);display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
+</div>
+
+<div class="auth-page">
+  <!-- LEFT: Visual Panel -->
+  <div class="auth-visual" aria-hidden="true">
+    <div class="auth-visual-img"></div>
+    <!-- Decorative blobs -->
+    <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.12),transparent);top:-50px;right:-80px;pointer-events:none;"></div>
+    <div style="position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(107,143,113,0.1),transparent);bottom:50px;left:-60px;pointer-events:none;"></div>
+
+    <div style="position:relative;z-index:1;">
+      <div class="hero-badge" style="margin-bottom:2rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Join 50,000+ Wellness Seekers</div>
+      <h2 style="font-family:var(--ff-heading);font-size:clamp(2rem,3.5vw,3rem);color:#fff;line-height:1.15;margin-bottom:1.5rem;">Your Botanical <em style="color:var(--clr-gold-light);">Wellness</em> Journey Starts Here</h2>
+      <p style="color:rgba(255,255,255,0.7);line-height:1.9;max-width:440px;">Access your personalised blend formulas, consultation history, subscription boxes, and the full Verdana wellness ecosystem — all in one place.</p>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="testimonial-slide" style="position:relative;z-index:1;margin-top:auto;">
+      <div class="stars-svg" style="margin-bottom:0.75rem;" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <p style="font-family:var(--ff-heading);font-style:italic;color:rgba(255,255,255,0.9);font-size:1.05rem;line-height:1.7;margin-bottom:1rem;">"Creating my account was the best wellness decision of 2026. The personalised dashboard makes managing my blends and consultations effortless."</p>
+      <div style="display:flex;align-items:center;gap:0.875rem;">
+        <div style="width:44px;height:44px;border-radius:50%;flex-shrink:0;border:2px solid var(--clr-gold-light);overflow:hidden;"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=128&q=80" alt="Amelia Morrison" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div><div style="color:#fff;font-weight:600;font-size:0.9rem;">Amelia Morrison</div><div style="color:rgba(255,255,255,0.5);font-size:0.75rem;">Apothecary Member · 2 years</div></div>
+      </div>
+    </div>
+
+    <!-- Feature bullets -->
+    <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:0.625rem;margin-top:2rem;">
+      <div style="display:flex;align-items:center;gap:0.75rem;color:rgba(255,255,255,0.8);font-size:0.875rem;"><span class="inline-check" style="color:var(--clr-gold);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Access your personalised blend formulas</div>
+      <div style="display:flex;align-items:center;gap:0.75rem;color:rgba(255,255,255,0.8);font-size:0.875rem;"><span class="inline-check" style="color:var(--clr-gold);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Track orders and subscription boxes</div>
+      <div style="display:flex;align-items:center;gap:0.75rem;color:rgba(255,255,255,0.8);font-size:0.875rem;"><span class="inline-check" style="color:var(--clr-gold);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Book and manage consultations</div>
+      <div style="display:flex;align-items:center;gap:0.75rem;color:rgba(255,255,255,0.8);font-size:0.875rem;"><span class="inline-check" style="color:var(--clr-gold);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Browse 50+ exclusive recipes</div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Auth Panel -->
+  <div class="auth-panel">
+    <div style="max-width:440px;width:100%;margin:0 auto;padding-top:2rem;">
+      <!-- Centered logo (normal flow, not sticky) -->
+      <div style="text-align:center;margin-bottom:2rem;">
+        <a href="index.html" style="font-family:var(--ff-heading);font-size:1.75rem;font-weight:700;color:var(--clr-gold);display:inline-flex;align-items:center;gap:0.5rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:26px;height:26px;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Verdana</a>
+      </div>
+      <!-- Tab Switcher -->
+      <div class="tab-switcher" role="tablist">
+        <button class="tab-btn active" id="loginTab" role="tab" aria-selected="true" aria-controls="loginPanel" onclick="switchTab('login')">Sign In</button>
+        <button class="tab-btn" id="registerTab" role="tab" aria-selected="false" aria-controls="registerPanel" onclick="switchTab('register')">Create Account</button>
+      </div>
+
+      <!-- LOGIN PANEL -->
+      <div id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
+        <h1 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:0.5rem;font-family:var(--ff-heading);">Welcome Back</h1>
+        <p style="color:var(--text-secondary);font-size:0.875rem;margin-bottom:2rem;">Sign in to continue your wellness journey.</p>
+
+        <!-- Social Logins -->
+        <button class="social-login-btn" type="button" aria-label="Continue with Google">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853"/><path d="M3.964 10.707A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.96L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+          Continue with Google
+        </button>
+        <button class="social-login-btn" type="button" aria-label="Continue with Apple">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.7 12.9c0-2.4 2-3.6 2.1-3.9-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.9-1.6 0-3.1 1-4 2.4-1.7 2.9-.4 7.3 1.2 9.7.8 1.2 1.8 2.5 3.1 2.4 1.2-.1 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.7-1-2.7-4.5zM14.3 5c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg> Continue with Apple
+        </button>
+
+        <div class="divider-text">or sign in with email</div>
+
+        <form data-validate id="loginForm">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email Address</label>
+            <input type="email" id="login-email" name="email" class="form-control" placeholder="your@email.com" required/>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <div style="position:relative;">
+              <input type="password" id="login-password" name="password" class="form-control" placeholder="••••••••" required style="padding-right:3rem;"/>
+              <button type="button" class="password-toggle" onclick="togglePwd('login-password',this)" aria-label="Show/hide password"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+            </div>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;gap:1rem;flex-wrap:wrap;">
+            <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--text-secondary);cursor:pointer;">
+              <input type="checkbox" name="remember" style="width:16px;height:16px;"/> Remember me
+            </label>
+            <a href="#" style="font-size:0.82rem;color:var(--clr-forest);font-weight:600;">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary w-100" style="justify-content:center;font-size:1rem;padding:1rem;">Sign In to My Account</button>
+        </form>
+
+        <p style="text-align:center;margin-top:1.5rem;font-size:0.85rem;color:var(--text-secondary);">
+          Don't have an account? <a href="#" onclick="switchTab('register');return false;" style="color:var(--clr-forest);font-weight:600;">Create one free →</a>
+        </p>
+      </div>
+
+      <!-- REGISTER PANEL -->
+      <div id="registerPanel" role="tabpanel" aria-labelledby="registerTab" style="display:none;">
+        <h1 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:0.5rem;font-family:var(--ff-heading);">Join Verdana</h1>
+        <p style="color:var(--text-secondary);font-size:0.875rem;margin-bottom:2rem;">Create your free account — no credit card required.</p>
+
+        <button class="social-login-btn" type="button" aria-label="Register with Google">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853"/><path d="M3.964 10.707A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.96L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+          Sign up with Google
+        </button>
+        <div class="divider-text">or register with email</div>
+
+        <form data-validate id="registerForm">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-group">
+              <label class="form-label" for="reg-fname">First Name</label>
+              <input type="text" id="reg-fname" name="firstName" class="form-control" placeholder="Elena" required/>
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-lname">Last Name</label>
+              <input type="text" id="reg-lname" name="lastName" class="form-control" placeholder="Voss" required/>
+              <div class="invalid-feedback"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-email">Email Address</label>
+            <input type="email" id="reg-email" name="email" class="form-control" placeholder="your@email.com" required/>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-password">Password</label>
+            <div style="position:relative;">
+              <input type="password" id="reg-password" name="password" class="form-control" placeholder="Min. 8 characters" required data-min-len="8" oninput="checkStrength(this.value)" style="padding-right:3rem;"/>
+              <button type="button" class="password-toggle" onclick="togglePwd('reg-password',this)" aria-label="Show/hide password"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+            </div>
+            <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+            <div style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.375rem;" id="strengthLabel"></div>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-goal">Primary Wellness Goal</label>
+            <select id="reg-goal" name="goal" class="form-control">
+              <option value="" disabled selected>Select your goal...</option>
+              <option>Better Sleep</option>
+              <option>Improved Digestion</option>
+              <option>Stronger Immunity</option>
+              <option>Stress Relief</option>
+              <option>More Energy</option>
+              <option>Detox & Cleanse</option>
+              <option>General Wellness</option>
+            </select>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1.5rem;">
+            <input type="checkbox" id="reg-terms" name="terms" style="margin-top:0.2rem;width:16px;height:16px;flex-shrink:0;" required/>
+            <label for="reg-terms" style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6;">I agree to Verdana's <a href="#" style="color:var(--clr-forest);">Terms of Service</a> and <a href="#" style="color:var(--clr-forest);">Privacy Policy</a></label>
+          </div>
+          <button type="submit" class="btn btn-gold w-100" style="justify-content:center;font-size:1rem;padding:1rem;">Create Free Account</button>
+        </form>
+
+        <p style="text-align:center;margin-top:1.5rem;font-size:0.85rem;color:var(--text-secondary);">
+          Already have an account? <a href="#" onclick="switchTab('login');return false;" style="color:var(--clr-forest);font-weight:600;">Sign in →</a>
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div style="text-align:center;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border-color);">
+        <p style="font-size:0.75rem;color:var(--text-secondary);line-height:1.7;display:flex;align-items:flex-start;justify-content:center;gap:0.4rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top:0.15rem;"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span>256-bit SSL encryption · GDPR compliant · No spam, ever<br/>By continuing, you agree to our <a href="#" style="color:var(--clr-forest);">Terms</a> and <a href="#" style="color:var(--clr-forest);">Privacy Policy</a></span></p>
+        <a href="index.html" style="font-size:0.82rem;color:var(--clr-sage);margin-top:1rem;display:inline-block;">← Back to Verdana Apothecary</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>
+function switchTab(tab) {
+  const isLogin = tab === 'login';
+  document.getElementById('loginPanel').style.display    = isLogin ? 'block' : 'none';
+  document.getElementById('registerPanel').style.display = isLogin ? 'none'  : 'block';
+  document.getElementById('loginTab').classList.toggle('active', isLogin);
+  document.getElementById('registerTab').classList.toggle('active', !isLogin);
+  document.getElementById('loginTab').setAttribute('aria-selected',    isLogin);
+  document.getElementById('registerTab').setAttribute('aria-selected', !isLogin);
+}
+function togglePwd(id, btn) {
+  const input = document.getElementById(id);
+  const show = input.type === 'password';
+  input.type = show ? 'text' : 'password';
+  const eyeSVG = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
+  const eyeOffSVG = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>';
+  btn.innerHTML = show ? eyeOffSVG : eyeSVG;
+}
+function checkStrength(val) {
+  const fill  = document.getElementById('strengthFill');
+  const label = document.getElementById('strengthLabel');
+  let score = 0;
+  if (val.length >= 8) score++;
+  if (/[A-Z]/.test(val))  score++;
+  if (/[0-9]/.test(val))  score++;
+  if (/[^A-Za-z0-9]/.test(val)) score++;
+  const levels = ['','Weak','Fair','Good','Strong'];
+  const colors  = ['','#ef4444','#f59e0b','#6B8F71','#2D4A3E'];
+  fill.style.width      = (score * 25) + '%';
+  fill.style.background = colors[score] || '';
+  label.textContent     = score ? 'Password strength: ' + levels[score] : '';
+  label.style.color     = colors[score] || '';
+}
+// Check URL hash
+if (location.hash === '#register') switchTab('register');
+
+// Redirect to home after successful auth (email forms)
+function wireAuthRedirect(formId) {
+  const form = document.getElementById(formId);
+  if (!form || form.dataset.redirectWired) return;
+  form.dataset.redirectWired = '1';
+  form.addEventListener('submit', () => {
+    let valid = true;
+    form.querySelectorAll('[required]').forEach(field => {
+      const val = field.value.trim();
+      if (field.type === 'checkbox') { if (!field.checked) valid = false; return; }
+      if (!val) valid = false;
+      else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) valid = false;
+      else if (field.dataset.minLen && val.length < parseInt(field.dataset.minLen)) valid = false;
+    });
+    if (!valid) return;
+    const btn = form.querySelector('[type=submit]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Welcome back — taking you home…'; }
+    setTimeout(() => { location.href = 'index.html'; }, 900);
+  });
+}
+wireAuthRedirect('loginForm');
+wireAuthRedirect('registerForm');
+
+// Social login buttons → home (simulated OAuth)
+document.querySelectorAll('.social-login-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.disabled) return;
+    btn.disabled = true;
+    const orig = btn.innerHTML;
+    btn.innerHTML = 'Connecting…';
+    setTimeout(() => { location.href = 'index.html'; }, 700);
+    setTimeout(() => { btn.disabled = false; btn.innerHTML = orig; }, 3000);
+  });
+});
+</script>
+<style>
+  @media(max-width:768px){.auth-page{grid-template-columns:1fr!important;}.auth-visual{display:none;}.auth-panel{padding-top:5.5rem!important;}}
+</style>
+</body>
+</html>

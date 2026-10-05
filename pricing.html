@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Verdana Apothecary Pricing — Flexible wellness subscription plans for every goal and budget."/>
+  <title>Pricing — Verdana Apothecary</title>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B8F71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E"/>
+  <style>
+    .toggle-wrap{display:flex;align-items:center;gap:1rem;justify-content:center;margin-bottom:3rem;}
+    .toggle-pill{width:52px;height:28px;border-radius:999px;background:var(--clr-sage-mist);border:1.5px solid var(--border-color);position:relative;cursor:pointer;transition:background 0.3s;}
+    .toggle-pill.active{background:var(--clr-forest);}
+    .toggle-thumb{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.2);transition:transform 0.3s;}
+    .toggle-pill.active .toggle-thumb{transform:translateX(24px);}
+    .toggle-label{font-size:0.9rem;font-weight:600;color:var(--text-secondary);}
+    .toggle-label.active{color:var(--clr-forest);}
+    .compare-table{width:100%;border-collapse:collapse;font-size:0.875rem;}
+    .compare-table th{padding:1rem 1.5rem;text-align:left;background:var(--bg-card);border-bottom:2px solid var(--border-color);font-family:var(--ff-body);font-weight:700;color:var(--text-heading);}
+    .compare-table td{padding:0.875rem 1.5rem;border-bottom:1px solid var(--border-color);color:var(--text-secondary);}
+    .compare-table tr:last-child td{border-bottom:none;}
+    .compare-table tr:hover td{background:var(--clr-sage-mist);}
+    .compare-table .yes{color:var(--clr-sage);font-weight:700;}
+    .compare-table .no{color:#cbd5e1;}
+    .compare-table .featured-col{background:rgba(45,74,62,0.04);font-weight:600;color:var(--text-heading);}
+    .addon-card{background:var(--bg-card);border-radius:var(--r-xl);border:1px solid var(--border-color);padding:1.75rem;transition:all 0.3s;display:flex;gap:1rem;align-items:flex-start;}
+    .addon-card:hover{border-color:var(--clr-sage);box-shadow:var(--shadow-md);}
+  </style>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1463320726281-696a485928c7?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;opacity:0.1;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="hero-badge" style="justify-content:center;margin-bottom:1.5rem;" data-aos><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg> Simple &amp; Transparent</div>
+    <h1 data-aos data-aos-delay="100">Wellness <em style="color:var(--clr-gold-light);">Plans</em></h1>
+    <p style="color:rgba(255,255,255,0.7);max-width:560px;margin:1.5rem auto 0;line-height:1.8;" data-aos data-aos-delay="200">No hidden fees. No long-term contracts. Just honest pricing for premium botanical wellness. Cancel or pause anytime.</p>
+    <div class="breadcrumb" style="margin-top:2rem;" data-aos data-aos-delay="300">
+      <a href="index.html">Home</a><span class="breadcrumb-sep">Pricing</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 1: PRICING CARDS
+═══════════════════════════════════════════ -->
+<section class="section bg-primary">
+  <div class="container">
+    <!-- Billing Toggle -->
+    <div class="toggle-wrap" data-aos>
+      <span class="toggle-label active" id="toggleMonthly">Monthly</span>
+      <div class="toggle-pill" id="billingToggle" role="switch" aria-checked="false" tabindex="0" aria-label="Toggle annual billing">
+        <div class="toggle-thumb"></div>
+      </div>
+      <span class="toggle-label" id="toggleAnnual">Annual <span style="background:var(--clr-gold);color:#fff;border-radius:999px;padding:0.15rem 0.625rem;font-size:0.72rem;font-weight:700;margin-left:0.25rem;">Save 20%</span></span>
+    </div>
+
+    <!-- Plans -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;align-items:end;">
+      <!-- Free -->
+      <div class="pricing-card" data-aos data-aos-delay="100">
+        <div class="value-icon" style="justify-content:center;margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.3-2.7.1-4 1-4.9 1.7z"/></svg></div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);margin-bottom:0.5rem;">Starter</div>
+        <h3 style="font-size:1.4rem;margin-bottom:0.5rem;">Herb Explorer</h3>
+        <div class="price-amount" style="font-size:2.5rem;">Free</div>
+        <div class="price-period">Forever. No credit card needed.</div>
+        <ul class="price-features">
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Access to 10 basic blend recipes</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Monthly wellness newsletter</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Community forum access</li>
+          <li class="price-feature"><span class="x-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span><span style="opacity:0.4;">Custom blend consultation</span></li>
+          <li class="price-feature"><span class="x-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span><span style="opacity:0.4;">Monthly box delivery</span></li>
+        </ul>
+        <a href="login.html" class="btn btn-outline w-100" style="justify-content:center;">Get Started Free</a>
+      </div>
+
+      <!-- Essentials -->
+      <div class="pricing-card" data-aos data-aos-delay="200">
+        <div class="value-icon" style="justify-content:center;margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="m4.9 4.9 2.1 2.1"/><path d="m17 17 2.1 2.1"/><path d="m19.1 4.9-2.1 2.1"/><path d="m7 17-2.1 2.1"/></svg></div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);margin-bottom:0.5rem;">Essentials</div>
+        <h3 style="font-size:1.4rem;margin-bottom:0.5rem;">Garden</h3>
+        <div class="price-amount" style="font-size:2.5rem;" id="gardenPrice">$29</div>
+        <div class="price-period" id="gardenPeriod">per month · cancel anytime</div>
+        <ul class="price-features">
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>2 curated blends per month</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Full recipe library (50+ blends)</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Weekly wellness email series</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>15% off add-on products</li>
+          <li class="price-feature"><span class="x-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span><span style="opacity:0.4;">Consultation sessions</span></li>
+        </ul>
+        <a href="login.html" class="btn btn-outline w-100" style="justify-content:center;">Choose Garden</a>
+      </div>
+
+      <!-- Wellness — FEATURED -->
+      <div class="pricing-card featured" data-aos data-aos-delay="300">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="value-icon" style="justify-content:center;margin-bottom:1rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">Best Value</div>
+        <h3 style="font-size:1.4rem;margin-bottom:0.5rem;color:#fff;">Wellness</h3>
+        <div class="price-amount" style="font-size:2.5rem;color:var(--clr-gold)!important;" id="wellnessPrice">$79</div>
+        <div class="price-period" id="wellnessPeriod">per month · cancel anytime</div>
+        <ul class="price-features">
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>4 curated blends + surprise gift</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Full recipe &amp; ritual library</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>1 consultation / quarter</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Priority blend shipping</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>25% off all products</li>
+        </ul>
+        <a href="login.html" class="btn btn-gold w-100" style="justify-content:center;">Choose Wellness</a>
+      </div>
+
+      <!-- Apothecary -->
+      <div class="pricing-card" data-aos data-aos-delay="400">
+        <div class="value-icon" style="justify-content:center;margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);margin-bottom:0.5rem;">Premium</div>
+        <h3 style="font-size:1.4rem;margin-bottom:0.5rem;">Apothecary</h3>
+        <div class="price-amount" style="font-size:2.5rem;" id="apothPrice">$149</div>
+        <div class="price-period" id="apothPeriod">per month · cancel anytime</div>
+        <ul class="price-features">
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>6 blends + full gift set</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Monthly 1-on-1 consultation</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Dedicated herbalist access</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Priority lab-tested batches</li>
+          <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Exclusive early blend access</li>
+        </ul>
+        <a href="login.html" class="btn btn-outline-gold w-100" style="justify-content:center;">Choose Apothecary</a>
+      </div>
+    </div>
+
+    <div class="text-center mt-8" style="color:var(--text-secondary);font-size:0.875rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;" data-aos>
+      <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure payment via Stripe · 30-day money-back guarantee · Cancel or pause anytime
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 2: COMPARISON TABLE
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--clr-sage-mist);">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>Side by Side</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">Full Feature <em>Comparison</em></h2>
+    </div>
+    <div style="overflow-x:auto;border-radius:var(--r-xl);box-shadow:var(--shadow-lg);border:1px solid var(--border-color);" data-aos>
+      <table class="compare-table" role="table">
+        <thead>
+          <tr>
+            <th style="min-width:220px;">Feature</th>
+            <th style="text-align:center;">Starter</th>
+            <th style="text-align:center;">Garden</th>
+            <th style="text-align:center;background:rgba(45,74,62,0.06);">Wellness</th>
+            <th style="text-align:center;">Apothecary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monthly Blends</td><td style="text-align:center;">—</td><td style="text-align:center;">2</td><td style="text-align:center;" class="featured-col">4 + gift</td><td style="text-align:center;">6 + gift set</td></tr>
+          <tr><td>Recipe Library</td><td style="text-align:center;">10 blends</td><td style="text-align:center;" class="yes">Full (50+)</td><td style="text-align:center;" class="yes featured-col">Full + Rituals</td><td style="text-align:center;" class="yes">Full + Rituals</td></tr>
+          <tr><td>Consultations</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;" class="featured-col">1 / quarter</td><td style="text-align:center;" class="yes">Monthly</td></tr>
+          <tr><td>Dedicated Herbalist</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;" class="no featured-col">✗</td><td style="text-align:center;" class="yes">✓</td></tr>
+          <tr><td>Product Discount</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;">15%</td><td style="text-align:center;" class="featured-col">25%</td><td style="text-align:center;">30%</td></tr>
+          <tr><td>Priority Shipping</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;" class="yes featured-col">✓</td><td style="text-align:center;" class="yes">✓ Express</td></tr>
+          <tr><td>Lab Test Reports</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;" class="no featured-col">✗</td><td style="text-align:center;" class="yes">✓ Priority</td></tr>
+          <tr><td>Early Blend Access</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;" class="no">✗</td><td style="text-align:center;" class="no featured-col">✗</td><td style="text-align:center;" class="yes">✓</td></tr>
+          <tr><td>Cancel Anytime</td><td style="text-align:center;" class="yes">✓</td><td style="text-align:center;" class="yes">✓</td><td style="text-align:center;" class="yes featured-col">✓</td><td style="text-align:center;" class="yes">✓</td></tr>
+          <tr>
+            <td style="font-weight:700;color:var(--text-heading);">Price</td>
+            <td style="text-align:center;font-weight:700;">Free</td>
+            <td style="text-align:center;font-weight:700;color:var(--clr-forest);">$29/mo</td>
+            <td style="text-align:center;font-weight:700;color:var(--clr-gold);" class="featured-col">$79/mo</td>
+            <td style="text-align:center;font-weight:700;color:var(--clr-forest);">$149/mo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 3: ADD-ONS
+═══════════════════════════════════════════ -->
+<section class="section bg-primary">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>Extras</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">Add-Ons to <em>Enhance</em> Your Plan</h2>
+      <p class="section-subtitle mx-auto text-center" data-aos data-aos-delay="200">Supercharge your subscription with optional extras available to all paying members.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      <div class="addon-card" data-aos data-aos-delay="100">
+        <div class="addon-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><h5 style="margin-bottom:0.5rem;">Extra Consultation</h5><p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.75rem;">Add a single 60-min consultation session to any plan, outside your regular quota.</p><div style="font-family:var(--ff-heading);font-size:1.5rem;color:var(--clr-forest);font-weight:700;">$65 <span style="font-size:0.9rem;color:var(--text-secondary);font-family:var(--ff-body);font-weight:400;">/ session</span></div></div>
+      </div>
+      <div class="addon-card" data-aos data-aos-delay="200">
+        <div class="addon-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></div>
+        <div><h5 style="margin-bottom:0.5rem;">Custom Lab Testing</h5><p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.75rem;">Get a priority third-party lab Certificate of Analysis for any blend of your choice.</p><div style="font-family:var(--ff-heading);font-size:1.5rem;color:var(--clr-forest);font-weight:700;">$45 <span style="font-size:0.9rem;color:var(--text-secondary);font-family:var(--ff-body);font-weight:400;">/ test</span></div></div>
+      </div>
+      <div class="addon-card" data-aos data-aos-delay="300">
+        <div class="addon-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <div><h5 style="margin-bottom:0.5rem;">Workshop Access</h5><p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.75rem;">Gain access to our full online workshop library — 6 courses, 40+ hours of video content.</p><div style="font-family:var(--ff-heading);font-size:1.5rem;color:var(--clr-forest);font-weight:700;">$149 <span style="font-size:0.9rem;color:var(--text-secondary);font-family:var(--ff-body);font-weight:400;">/ year</span></div></div>
+      </div>
+      <div class="addon-card" data-aos data-aos-delay="100">
+        <div class="addon-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></div>
+        <div><h5 style="margin-bottom:0.5rem;">Gift Subscription</h5><p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.75rem;">Gift any plan for 1, 3, or 6 months. Includes luxury gift card and personalised note.</p><div style="font-family:var(--ff-heading);font-size:1.5rem;color:var(--clr-forest);font-weight:700;">From $29 <span style="font-size:0.9rem;color:var(--text-secondary);font-family:var(--ff-body);font-weight:400;">/ month</span></div></div>
+      </div>
+      <div class="addon-card" data-aos data-aos-delay="200">
+        <div class="addon-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></div>
+        <div><h5 style="margin-bottom:0.5rem;">Corporate Wellness</h5><p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.75rem;">Bulk subscriptions for your team (20+ people) with custom branding and on-site workshops.</p><div style="font-family:var(--ff-heading);font-size:1.5rem;color:var(--clr-forest);font-weight:700;">Custom <span style="font-size:0.9rem;color:var(--text-secondary);font-family:var(--ff-body);font-weight:400;">quote</span></div></div>
+      </div>
+      <div class="addon-card" data-aos data-aos-delay="300">
+        <div class="addon-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+        <div><h5 style="margin-bottom:0.5rem;">Express International</h5><p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.75rem;">Upgrade your international shipping to 3-5 day express delivery with full tracking.</p><div style="font-family:var(--ff-heading);font-size:1.5rem;color:var(--clr-forest);font-weight:700;">$18 <span style="font-size:0.9rem;color:var(--text-secondary);font-family:var(--ff-body);font-weight:400;">/ delivery</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 4: FAQ
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container" style="max-width:800px;">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>FAQ</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">Pricing <em>Questions</em></h2>
+    </div>
+    <div class="accordion-wrap">
+      <div class="accordion-item open" data-aos><button class="accordion-header">Can I change my plan after subscribing?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-content">Yes, absolutely! You can upgrade or downgrade your plan at any time from your account dashboard. Changes take effect on your next billing date. Upgrading triggers an immediate prorated charge for the remainder of the month.</div></div></div>
+      <div class="accordion-item" data-aos><button class="accordion-header">Is there a free trial?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-content">We don't offer free trials for paid plans, but we do have a permanent free Starter plan so you can experience our community and content before committing. We also have a Discovery Sample Pack ($12) to try our blends before subscribing.</div></div></div>
+      <div class="accordion-item" data-aos><button class="accordion-header">How does the annual billing discount work?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-content">When you choose annual billing, you pay upfront for 12 months at a 20% discount. For example, the Wellness plan at $79/month becomes $758/year (equivalent to $63.17/month). Annual plans can still be paused but not refunded after the first 30 days.</div></div></div>
+      <div class="accordion-item" data-aos><button class="accordion-header">What payment methods are accepted?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-content">We accept all major credit cards (Visa, Mastercard, Amex, Discover), PayPal, Apple Pay, Google Pay, and bank transfers for annual plans over $500. All payments are processed securely via Stripe.</div></div></div>
+      <div class="accordion-item" data-aos><button class="accordion-header">Do you ship internationally?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-content">Yes! We ship to 85+ countries. Standard international shipping is included for Wellness and Apothecary plans. Garden plan subscribers pay a flat $12 international shipping fee. Starter plan (free) is digital-only.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 5: TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section class="section bg-primary">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>Happy Subscribers</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">What Our Members <em>Say</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+      <article class="testimonial-card" data-aos data-aos-delay="100">
+        <div class="stars-svg" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="testimonial-text">"The Wellness plan pays for itself. The quarterly consultation alone would cost $65+ elsewhere. The blends are extraordinary quality."</p>
+        <div class="testimonial-author">
+          <div style="width:52px;height:52px;border-radius:50%;flex-shrink:0;border:2px solid var(--clr-gold-light);overflow:hidden;"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=128&q=80" alt="Keiko Nakamura" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+          <div><div class="author-name">Keiko Nakamura</div><div class="author-title">Wellness Subscriber · 14 months</div></div>
+        </div>
+      </article>
+      <article class="testimonial-card" data-aos data-aos-delay="200">
+        <div class="stars-svg" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="testimonial-text">"I upgraded to Apothecary last year and the dedicated herbalist has completely transformed my health. Worth every penny, truly premium service."</p>
+        <div class="testimonial-author">
+          <div style="width:52px;height:52px;border-radius:50%;flex-shrink:0;border:2px solid var(--clr-gold-light);overflow:hidden;"><img src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=128&q=80" alt="David Lau" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+          <div><div class="author-name">David Lau</div><div class="author-title">Apothecary Subscriber · 18 months</div></div>
+        </div>
+      </article>
+      <article class="testimonial-card" data-aos data-aos-delay="300">
+        <div class="stars-svg" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="testimonial-text">"Started on the free plan, upgraded to Garden after one week. The recipe library alone is worth the $29. Now I blend my own teas at home!"</p>
+        <div class="testimonial-author">
+          <div style="width:52px;height:52px;border-radius:50%;flex-shrink:0;border:2px solid var(--clr-gold-light);overflow:hidden;"><img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?auto=format&fit=crop&w=128&q=80" alt="Sarah Blake" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+          <div><div class="author-name">Sarah Blake</div><div class="author-title">Garden Subscriber · 5 months</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 6: CTA
+═══════════════════════════════════════════ -->
+<section class="section-sm" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,var(--clr-forest),var(--clr-forest-deep));border-radius:var(--r-2xl);padding:clamp(3rem,6vw,5rem);text-align:center;" data-aos>
+      <h2 style="font-family:var(--ff-heading);font-size:clamp(1.8rem,4vw,3rem);color:#fff;margin-bottom:1rem;">Start Your Botanical Journey Today</h2>
+      <p style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto 2rem;line-height:1.8;">Join 50,000+ wellness seekers. Start free, upgrade anytime. Your body will thank you.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="login.html" class="btn btn-gold btn-xl">Start Free Today</a>
+        <a href="contact.html" class="btn btn-ghost btn-xl">Talk to Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+// Billing toggle
+const toggle = document.getElementById('billingToggle');
+const monthly = { garden:'$29', wellness:'$79', apoth:'$149' };
+const annual  = { garden:'$23', wellness:'$63', apoth:'$119' };
+let isAnnual = false;
+
+function updatePrices() {
+  const prices = isAnnual ? annual : monthly;
+  document.getElementById('gardenPrice').textContent   = prices.garden;
+  document.getElementById('wellnessPrice').textContent = prices.wellness;
+  document.getElementById('apothPrice').textContent    = prices.apoth;
+  const period = isAnnual ? 'per month (billed annually)' : 'per month · cancel anytime';
+  ['gardenPeriod','wellnessPeriod','apothPeriod'].forEach(id => document.getElementById(id).textContent = period);
+  document.getElementById('toggleMonthly').classList.toggle('active', !isAnnual);
+  document.getElementById('toggleAnnual').style.color  = isAnnual ? 'var(--clr-forest)' : '';
+}
+toggle.addEventListener('click', () => { isAnnual = !isAnnual; toggle.classList.toggle('active', isAnnual); toggle.setAttribute('aria-checked', isAnnual); updatePrices(); });
+toggle.addEventListener('keydown', e => { if (e.key===' '||e.key==='Enter'){e.preventDefault();toggle.click();} });
+</script>
+<style>
+  @media(max-width:1024px){[style*="grid-template-columns:repeat(4"]{display:grid!important;grid-template-columns:1fr 1fr!important;}.pricing-card.featured{transform:scale(1);}}
+  @media(max-width:768px){[style*="grid-template-columns:repeat(4"],[style*="grid-template-columns:repeat(3"]{display:block!important;}[style*="grid-template-columns:repeat(4"]>div,[style*="grid-template-columns:repeat(3"]>div,.addon-card{margin-bottom:1.5rem;}}
+  @media(max-width:640px){.compare-table{font-size:0.78rem;}.compare-table th,.compare-table td{padding:0.625rem 0.875rem;}}
+</style>
+</body>
+</html>

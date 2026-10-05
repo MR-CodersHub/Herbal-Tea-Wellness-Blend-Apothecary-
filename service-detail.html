@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Custom Blend Consultation — Verdana Apothecary. A 60-minute 1-on-1 session with a master herbalist to craft your personalised herbal formula."/>
+  <title>Custom Blend Consultation — Verdana Apothecary</title>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B8F71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E"/>
+  <style>
+    .ingredient-list-item{display:flex;align-items:flex-start;gap:0.875rem;padding:0.875rem 0;border-bottom:1px solid var(--border-color);}
+    .ingredient-dot{width:10px;height:10px;border-radius:50%;background:var(--clr-sage);margin-top:0.45rem;flex-shrink:0;}
+    .include-check{color:var(--clr-sage);font-weight:700;margin-right:0.5rem;}
+    .sticky-booking{position:sticky;top:100px;background:var(--bg-card);border-radius:var(--r-xl);border:1px solid var(--border-color);overflow:hidden;box-shadow:var(--shadow-lg);}
+    .related-service{background:var(--bg-card);border-radius:var(--r-lg);border:1px solid var(--border-color);padding:1.25rem;display:flex;gap:1rem;align-items:center;transition:all 0.3s;}
+    .related-service:hover{border-color:var(--clr-sage);transform:translateX(4px);}
+  </style>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="padding-top:clamp(7rem,14vw,10rem);padding-bottom:clamp(3rem,6vw,5rem);">
+  <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center top;opacity:0.15;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="breadcrumb" style="justify-content:center;margin-bottom:1.5rem;">
+      <a href="index.html">Home</a><span class="breadcrumb-sep"><a href="services.html">Services</a></span><span class="breadcrumb-sep">Custom Blend Consultation</span>
+    </div>
+    <div class="hero-badge" style="justify-content:center;margin-bottom:1.5rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg> Consultation Service</div>
+    <h1 data-aos>Custom Blend <em style="color:var(--clr-gold-light);">Consultation</em></h1>
+    <p style="color:rgba(255,255,255,0.75);max-width:540px;margin:1.5rem auto 0;line-height:1.8;">A 60-minute deep-dive session with your dedicated master herbalist — crafting a formula as unique as you are.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 1: DETAIL + BOOKING SIDEBAR
+═══════════════════════════════════════════ -->
+<section class="section bg-primary">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:start;">
+      <!-- Main Content -->
+      <div>
+        <!-- Gallery -->
+        <div style="display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:1rem;margin-bottom:3rem;" data-aos>
+          <div style="border-radius:var(--r-xl);overflow:hidden;grid-row:span 2;aspect-ratio:3/4;">
+            <img src="assets/images/wellness-lifestyle.jpg" alt="One-on-one herbal consultation session" style="width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/>
+          </div>
+          <div style="border-radius:var(--r-xl);overflow:hidden;aspect-ratio:4/3;">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Calm apothecary consultation setting" style="width:100%;height:100%;object-fit:cover;"/>
+          </div>
+          <div style="border-radius:var(--r-xl);overflow:hidden;aspect-ratio:4/3;">
+            <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=800&q=80" alt="Fresh botanical ingredients prepared for blending" style="width:100%;height:100%;object-fit:cover;"/>
+          </div>
+        </div>
+
+        <!-- Overview -->
+        <div data-aos>
+          <div class="section-label">Service Overview</div>
+          <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.75rem);">Your Wellness, <em>Personalised</em></h2>
+          <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:1.5rem;">This isn't a generic wellness consultation. It's a collaborative 60-minute conversation with a certified master herbalist who will review your full health history, current medications (for safety checking), stress levels, dietary habits, sleep patterns, and specific wellness goals before crafting a blend that's formulated exclusively for you.</p>
+          <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:2rem;">Every consultation results in a written Herbal Wellness Report, your personalised blend formula, a brewing ritual guide, and a follow-up email check-in at 2 and 4 weeks. This is herbal medicine done properly.</p>
+        </div>
+
+        <!-- What's Included -->
+        <div style="background:var(--clr-sage-mist);border-radius:var(--r-xl);padding:2.5rem;margin-bottom:2.5rem;" data-aos>
+          <h4 style="margin-bottom:1.5rem;">What's Included</h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+            <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;"><span class="include-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>60-min video or in-person session</div>
+            <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;"><span class="include-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Full health history intake review</div>
+            <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;"><span class="include-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Herb-drug interaction safety check</div>
+            <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;"><span class="include-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Custom blend formula creation</div>
+            <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;"><span class="include-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Written Herbal Wellness Report</div>
+            <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;"><span class="include-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Personalised brewing ritual guide</div>
+            <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;"><span class="include-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>2-week &amp; 4-week email check-ins</div>
+            <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;"><span class="include-check"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>30-day satisfaction guarantee</div>
+          </div>
+        </div>
+
+        <!-- Ingredients Used -->
+        <div data-aos>
+          <h4 style="margin-bottom:1.5rem;">Example Botanical Ingredients</h4>
+          <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:1.5rem;">Your actual formula will be unique. These are examples of the 200+ certified organic botanicals we draw from:</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;">
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Chamomile</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Lavender</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Ginger Root</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Peppermint</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Ashwagandha</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Holy Basil</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Elderflower</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Rose Hips</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Turmeric</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Cacao Husk</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">Valerian Root</span>
+            <span style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);">+ 188 more</span>
+          </div>
+        </div>
+
+        <!-- Skill Bars -->
+        <div data-aos style="margin-bottom:2.5rem;">
+          <h4 style="margin-bottom:1.5rem;">Client Outcome Ratings</h4>
+          <div>
+            <div class="skill-bar-label"><span>Sleep Improvement</span><span>94%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar" data-width="94"></div></div>
+          </div>
+          <div style="margin-top:1.25rem;">
+            <div class="skill-bar-label"><span>Overall Wellness</span><span>91%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar" data-width="91" style="background:linear-gradient(90deg,var(--clr-gold),var(--clr-earth));"></div></div>
+          </div>
+          <div style="margin-top:1.25rem;">
+            <div class="skill-bar-label"><span>Stress Reduction</span><span>88%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar" data-width="88" style="background:linear-gradient(90deg,var(--clr-lavender),#5B4B78);"></div></div>
+          </div>
+          <div style="margin-top:1.25rem;">
+            <div class="skill-bar-label"><span>Would Recommend</span><span>98%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar" data-width="98" style="background:linear-gradient(90deg,var(--clr-sage),var(--clr-forest));"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sticky Booking Card -->
+      <div>
+        <div class="sticky-booking">
+          <div style="background:linear-gradient(135deg,var(--clr-forest),var(--clr-forest-deep));padding:2rem;color:#fff;">
+            <div style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-gold-light);margin-bottom:0.5rem;">Starting From</div>
+            <div style="font-family:var(--ff-heading);font-size:3rem;font-weight:700;line-height:1;">$85<span style="font-size:1.1rem;font-weight:400;color:rgba(255,255,255,0.6);"> / session</span></div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:0.5rem;">60-minute consultation · Includes blend</div>
+          </div>
+          <div style="padding:2rem;">
+            <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1.5rem;font-size:0.875rem;color:var(--text-secondary);">
+              <div style="display:flex;align-items:center;gap:0.75rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> 60-min video or in-person</div>
+              <div style="display:flex;align-items:center;gap:0.75rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Custom blend formula</div>
+              <div style="display:flex;align-items:center;gap:0.75rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Written wellness report</div>
+              <div style="display:flex;align-items:center;gap:0.75rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> 30-day guarantee</div>
+            </div>
+            <a href="contact.html" class="btn btn-gold w-100" style="justify-content:center;margin-bottom:0.75rem;">Book Consultation</a>
+            <a href="contact.html" class="btn btn-outline w-100" style="justify-content:center;">Free Discovery Call</a>
+            <div style="text-align:center;margin-top:1.25rem;font-size:0.78rem;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;gap:0.4rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure booking · No payment until session</div>
+          </div>
+          <div style="border-top:1px solid var(--border-color);padding:1.5rem;">
+            <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-secondary);margin-bottom:1rem;">Your Herbalist</div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <div style="width:48px;height:48px;border-radius:50%;flex-shrink:0;border:2px solid var(--clr-gold-light);overflow:hidden;"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=128&q=80" alt="Dr. Elena Voss" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+              <div><div style="font-weight:700;color:var(--text-heading);font-size:0.95rem;">Dr. Elena Voss</div><div style="font-size:0.78rem;color:var(--text-secondary);">PhD Phytochemistry · 18 years</div></div>
+            </div>
+            <div style="margin-top:1rem;font-size:0.82rem;color:var(--text-secondary);line-height:1.7;">"Every body deserves a blend that speaks its language. I look forward to crafting yours."</div>
+          </div>
+          <div style="background:var(--clr-gold-pale);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:0.75rem;">
+            <span class="award-icon" style="color:var(--clr-earth);"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" aria-hidden="true" style="width:24px;height:24px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <div><div style="font-weight:700;font-size:0.9rem;color:var(--clr-earth);">4.9 / 5.0 Average Rating</div><div style="font-size:0.75rem;color:var(--clr-bark);">From 2,847 consultation reviews</div></div>
+          </div>
+        </div>
+
+        <!-- Related Services -->
+        <div style="margin-top:2rem;" data-aos>
+          <h6 style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);margin-bottom:1rem;">Related Services</h6>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <a href="service-detail.html" class="related-service">
+              <div style="width:40px;height:40px;border-radius:var(--r-md);background:var(--clr-sage-mist);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--clr-forest);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg></div>
+              <div><div style="font-weight:600;font-size:0.875rem;color:var(--text-heading);">Monthly Wellness Box</div><div style="font-size:0.78rem;color:var(--text-secondary);">From $49/month</div></div>
+            </a>
+            <a href="service-detail.html" class="related-service">
+              <div style="width:40px;height:40px;border-radius:var(--r-md);background:var(--clr-gold-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--clr-forest);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.3-2.7.1-4 1-4.9 1.7z"/></svg></div>
+              <div><div style="font-weight:600;font-size:0.875rem;color:var(--text-heading);">30-Day Wellness Protocol</div><div style="font-size:0.78rem;color:var(--text-secondary);">From $220/month</div></div>
+            </a>
+            <a href="service-detail.html" class="related-service">
+              <div style="width:40px;height:40px;border-radius:var(--r-md);background:var(--clr-sage-mist);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--clr-forest);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+              <div><div style="font-weight:600;font-size:0.875rem;color:var(--text-heading);">Herbal Workshop</div><div style="font-size:0.78rem;color:var(--text-secondary);">From $299/course</div></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 2: PROCESS TIMELINE
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--clr-sage-mist);">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>Your Journey</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">What to Expect from <em>Your Consultation</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;">
+      <div style="text-align:center;" data-aos data-aos-delay="100">
+        <div class="step-icon" style="margin:0 auto 1.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Pre-Session (5 min)</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Complete our detailed health intake form. We review it thoroughly before your session so we can dive straight into your wellness conversation.</p>
+      </div>
+      <div style="text-align:center;" data-aos data-aos-delay="200">
+        <div class="step-icon" style="margin:0 auto 1.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Consultation (45 min)</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">In-depth discussion covering your health goals, lifestyle, stress patterns, sleep quality, digestion, current medications, and sensory preferences.</p>
+      </div>
+      <div style="text-align:center;" data-aos data-aos-delay="300">
+        <div class="step-icon" style="margin:0 auto 1.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Blend Design (10 min)</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Your herbalist presents a preliminary formula and explains each ingredient's role. You collaborate on final adjustments to taste and potency.</p>
+      </div>
+      <div style="text-align:center;" data-aos data-aos-delay="400">
+        <div class="step-icon" style="margin:0 auto 1.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">After Your Session</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Receive your Wellness Report by email within 24 hours. Your blend is formulated and shipped within 48 hours. Check-ins at 2 and 4 weeks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 3: TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section class="section bg-primary">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>Reviews</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">What Clients <em>Say</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+      <article class="testimonial-card" data-aos data-aos-delay="100">
+        <div class="stars-svg" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="testimonial-text">"Dr. Voss took 90 minutes with me even though my session was booked for 60. She truly listens. My custom sleep blend arrived in 3 days and has been life-changing."</p>
+        <div class="testimonial-author">
+          <div style="width:52px;height:52px;border-radius:50%;flex-shrink:0;border:2px solid var(--clr-gold-light);overflow:hidden;"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=128&q=80" alt="Anna Nguyen" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+          <div><div class="author-name">Anna Nguyen</div><div class="author-title">Consultation Client · San Francisco</div></div>
+        </div>
+      </article>
+      <article class="testimonial-card" data-aos data-aos-delay="200">
+        <div class="stars-svg" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="testimonial-text">"The herb-drug interaction check alone was worth the fee. I had no idea two of my supplements could interact with my prescription. This service is genuinely important."</p>
+        <div class="testimonial-author">
+          <div style="width:52px;height:52px;border-radius:50%;flex-shrink:0;border:2px solid var(--clr-gold-light);overflow:hidden;"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=128&q=80" alt="Robert Berg" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+          <div><div class="author-name">Robert Berg</div><div class="author-title">Consultation Client · Austin, TX</div></div>
+        </div>
+      </article>
+      <article class="testimonial-card" data-aos data-aos-delay="300">
+        <div class="stars-svg" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="testimonial-text">"I've seen nutritionists and dietitians. This was more thorough, more personalised, and more effective than any appointment I've had. Truly exceptional expertise."</p>
+        <div class="testimonial-author">
+          <div style="width:52px;height:52px;border-radius:50%;flex-shrink:0;border:2px solid var(--clr-gold-light);overflow:hidden;"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=128&q=80" alt="Michelle Kim" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+          <div><div class="author-name">Michelle Kim</div><div class="author-title">Consultation Client · New York</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 4: FAQ
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container" style="max-width:780px;">
+    <div class="text-center mb-10">
+      <div class="section-label mx-auto" data-aos>Questions</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">Consultation <em>FAQ</em></h2>
+    </div>
+    <div class="accordion-wrap">
+      <div class="accordion-item open" data-aos><button class="accordion-header">Is this a medical consultation?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-content">No. Our consultations are herbal wellness sessions, not medical diagnoses or treatment. We complement conventional medicine and always recommend you continue working with your doctor. We perform herb-drug interaction checks for safety purposes only.</div></div></div>
+      <div class="accordion-item" data-aos><button class="accordion-header">What if I need to reschedule?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-content">You can reschedule up to 24 hours before your session with no charge. Cancellations within 24 hours incur a 50% cancellation fee. No-shows forfeit the session fee.</div></div></div>
+      <div class="accordion-item" data-aos><button class="accordion-header">How long until I receive my custom blend?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-content">Your blend is formulated within 24 hours of your session and shipped within 48 hours. US standard delivery is 3-5 business days. Express options available at checkout.</div></div></div>
+      <div class="accordion-item" data-aos><button class="accordion-header">Can I change my formula after receiving it?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-content">Yes! During your 2-week check-in we review how the blend is working and can adjust ratios, add, or remove ingredients based on your feedback. Minor adjustments are included in your consultation fee.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 5: CTA BANNER
+═══════════════════════════════════════════ -->
+<section class="section-sm" style="background:var(--bg-primary);">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,var(--clr-forest) 0%,var(--clr-forest-deep) 100%);border-radius:var(--r-2xl);padding:clamp(2.5rem,5vw,4.5rem);text-align:center;" data-aos>
+      <div class="hero-badge" style="justify-content:center;margin-bottom:1.5rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg> Limited Spots Weekly</div>
+      <h2 style="font-family:var(--ff-heading);font-size:clamp(1.8rem,4vw,3rem);color:#fff;margin-bottom:1rem;">Ready to Meet Your Herbalist?</h2>
+      <p style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto 2rem;line-height:1.8;">We open 12 new consultation slots each Monday. Book yours before they fill — your wellness journey starts with one conversation.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-gold btn-xl">Book Your Session — $85</a>
+        <a href="contact.html" class="btn btn-ghost btn-xl">Free Discovery Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 6: SKILLS & EXPERTISE
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--clr-sage-mist);">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>Our Expertise</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">Deep <em>Specialisations</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+      <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);" data-aos data-aos-delay="100">
+        <div class="value-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M12 5v13"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Neurological Herbs</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Sleep disorders, anxiety, cognitive support, and mood regulation using adaptogens and nervine herbs like lion's mane, bacopa, and valerian.</p>
+      </div>
+      <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);" data-aos data-aos-delay="200">
+        <div class="value-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Immune Modulation</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Auto-immune support, chronic illness management, and preventive immune strengthening with mushroom complexes, elderberry, and echinacea.</p>
+      </div>
+      <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);" data-aos data-aos-delay="300">
+        <div class="value-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.3-2.7.1-4 1-4.9 1.7z"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Digestive Restoration</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">IBS, SIBO, leaky gut, and microbiome support using prebiotic herbs, bitters, carminatives, and gut-healing botanicals.</p>
+      </div>
+      <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);" data-aos data-aos-delay="100">
+        <div class="value-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Hormonal Balance</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Adrenal fatigue, thyroid support, menstrual health, and perimenopause using phytoestrogenic and adaptogenic herbs.</p>
+      </div>
+      <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);" data-aos data-aos-delay="200">
+        <div class="value-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.5.5 0 0 1-.93 0L9.04 2.18a.5.5 0 0 0-.93 0l-2.6 9.19A2 2 0 0 0 3.57 13H2"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Athletic Performance</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Recovery, endurance, anti-inflammation, and metabolic support for athletes using tonics, anti-oxidants, and circulatory herbs.</p>
+      </div>
+      <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);" data-aos data-aos-delay="300">
+        <div class="value-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Detox &amp; Liver Support</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Hepatoprotective herbs, kidney cleansing, lymphatic drainage, and environmental toxin elimination protocols.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<style>
+  @media(max-width:992px){
+    [style*="grid-template-columns:2fr 1fr"]{display:block!important;}
+    .sticky-booking{position:static;margin-top:2rem;}
+    [style*="grid-template-columns:2fr 1fr"]>div{margin-bottom:2rem;}
+  }
+  @media(max-width:768px){
+    [style*="grid-template-columns:repeat(4"],[style*="grid-template-columns:repeat(3"],[style*="grid-template-columns:2fr 1fr"],[style*="grid-template-columns:1fr 1fr"]{display:block!important;}
+    [style*="grid-template-columns:repeat(4"]>div,[style*="grid-template-columns:repeat(3"]>div,[style*="grid-template-columns:2fr 1fr"]>div,[style*="grid-template-columns:1fr 1fr"]>div{margin-bottom:1.5rem;}
+    [style*="grid-template-columns:repeat(4"]>div:last-child,[style*="grid-template-columns:repeat(3"]>div:last-child,[style*="grid-template-columns:2fr 1fr"]>div:last-child,[style*="grid-template-columns:1fr 1fr"]>div:last-child{margin-bottom:0;}
+  }
+</style>
+</body>
+</html>

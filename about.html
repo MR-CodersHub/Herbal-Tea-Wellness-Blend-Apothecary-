@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Verdana Apothecary — Our story, our master herbalists, our mission to bring botanical wellness to every home." />
+  <title>About Us — Verdana Apothecary</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B8F71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E" />
+  <style>
+    .team-card{background:var(--bg-card);border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border-color);transition:all 0.5s ease;}
+    .team-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl);}
+    .team-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;transition:transform 0.7s ease;background:linear-gradient(135deg,var(--clr-sage-mist),var(--clr-gold-pale));}
+    .team-card:hover .team-img{transform:scale(1.04);}
+    .award-badge{display:flex;align-items:center;gap:1rem;background:var(--bg-card);border-radius:var(--r-lg);padding:1.25rem 1.5rem;border:1px solid var(--border-color);transition:all 0.3s;}
+    .award-badge:hover{border-color:var(--clr-gold);box-shadow:var(--shadow-sm);}
+    .timeline-item{display:grid;grid-template-columns:80px 1fr;gap:1.5rem;margin-bottom:2.5rem;align-items:start;}
+    .timeline-year{font-family:var(--ff-heading);font-size:1.75rem;font-weight:700;color:var(--clr-gold);line-height:1;}
+    .timeline-dot{width:12px;height:12px;border-radius:50%;background:var(--clr-sage);margin-top:0.5rem;flex-shrink:0;}
+    .value-card{padding:2rem;border-radius:var(--r-xl);border:1px solid var(--border-color);transition:all 0.4s;background:var(--bg-card);}
+    .value-card:hover{border-color:var(--clr-sage);transform:translateY(-4px);box-shadow:var(--shadow-md);}
+    .skill-bar-label{display:flex;justify-content:space-between;font-size:0.8rem;font-weight:600;margin-bottom:0.375rem;}
+  </style>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 1: PAGE HERO
+═══════════════════════════════════════════ -->
+<section class="page-hero" aria-label="About us hero">
+  <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;opacity:0.12;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="hero-badge" style="justify-content:center;margin-bottom:1.5rem;" data-aos>Est. 2018 · Botanical Wellness</div>
+    <h1 data-aos data-aos-delay="100">Our <em style="color:var(--clr-gold-light);">Story</em></h1>
+    <p style="color:rgba(255,255,255,0.7);max-width:580px;margin:1.5rem auto 0;line-height:1.8;" data-aos data-aos-delay="200">
+      Born from a grandmother's herb garden and a daughter's science degree — Verdana Apothecary bridges ancestral wisdom and modern phytotherapy.
+    </p>
+    <div class="breadcrumb" style="margin-top:2rem;" data-aos data-aos-delay="300">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">About Us</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 2: FOUNDER STORY
+═══════════════════════════════════════════ -->
+<section class="section bg-primary" aria-labelledby="founder-heading">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+      <div data-aos="fade-right">
+        <div class="section-label">The Founder's Story</div>
+        <h2 class="section-title" id="founder-heading">A Garden, A Dream,<br/>&amp; <em>Eight Years Later</em></h2>
+        <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:1.5rem;">
+          It began in 2018 in Dr. Elena Voss's grandmother's garden in Bavaria. Surrounded by chamomile, lavender, and rose hips, Elena — a trained phytochemist — saw how her grandmother's simple herbal remedies outperformed many pharmaceuticals she'd studied.
+        </p>
+        <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:1.5rem;">
+          Returning to California, she set up a small laboratory in her kitchen, determined to create formulations backed by both traditional wisdom and clinical research. What started as gifts for friends became Verdana Apothecary — a brand that now serves 50,000+ customers across 42 countries.
+        </p>
+        <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:2rem;">
+          "I want every cup to feel like a letter from nature," Elena says. "A gentle reminder that the earth provides everything we need to thrive."
+        </p>
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+          <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--clr-forest),var(--clr-sage));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.2rem;flex-shrink:0;">EV</div>
+          <div>
+            <div style="font-weight:700;font-size:1.1rem;color:var(--text-heading);">Dr. Elena Voss</div>
+            <div style="font-size:0.875rem;color:var(--text-secondary);">Founder & Master Herbalist, PhD Phytochemistry</div>
+          </div>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <div style="position:relative;">
+          <div class="img-wrapper" style="border-radius:var(--r-xl);aspect-ratio:4/5;overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80" alt="Dr. Elena Voss, founder of Verdana Apothecary" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+          </div>
+          <div style="position:absolute;bottom:-2rem;right:-2rem;background:var(--clr-forest);color:#fff;border-radius:var(--r-xl);padding:1.5rem 2rem;box-shadow:var(--shadow-xl);text-align:center;">
+            <div style="font-family:var(--ff-heading);font-size:2.5rem;font-weight:700;color:var(--clr-gold);">50K+</div>
+            <div style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Happy Customers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 3: MISSION, VISION & VALUES
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--clr-sage-mist);" aria-label="Mission vision values">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>What Drives Us</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">Mission, Vision &amp; <em>Values</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem;">
+      <div style="background:linear-gradient(135deg,var(--clr-forest),var(--clr-forest-deep));border-radius:var(--r-xl);padding:3rem;color:#fff;" data-aos="fade-right">
+        <div class="award-icon" style="color:var(--clr-gold-light);margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h4 style="color:var(--clr-gold-light);margin-bottom:1rem;">Our Mission</h4>
+        <p style="color:rgba(255,255,255,0.8);line-height:1.9;">To make premium, evidence-based herbal wellness accessible to everyone — bridging ancient botanical traditions with modern scientific validation, one cup at a time.</p>
+      </div>
+      <div style="background:linear-gradient(135deg,var(--clr-gold),var(--clr-earth));border-radius:var(--r-xl);padding:3rem;color:#fff;" data-aos="fade-left">
+        <div class="award-icon" style="color:#fff;margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
+        <h4 style="color:#fff;margin-bottom:1rem;">Our Vision</h4>
+        <p style="color:rgba(255,255,255,0.85);line-height:1.9;">A world where botanical medicine is the first choice for wellness — not the last resort. Where communities thrive through nature, and our planet heals through sustainable herbal practices.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
+      <div class="value-card" data-aos data-aos-delay="100">
+        <div class="value-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Sustainability</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Carbon-neutral operations, compostable packaging, and reforestation partnerships for every order placed.</p>
+      </div>
+      <div class="value-card" data-aos data-aos-delay="200">
+        <div class="value-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Evidence-Based</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Every formula is backed by peer-reviewed research. We cite our sources and never make unfounded health claims.</p>
+      </div>
+      <div class="value-card" data-aos data-aos-delay="300">
+        <div class="value-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Fair Trade</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">We pay above-market rates to our farmers, invest in community development, and maintain long-term supplier relationships.</p>
+      </div>
+      <div class="value-card" data-aos data-aos-delay="400">
+        <div class="value-icon" style="margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Uncompromising Quality</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">We reject up to 40% of sourced botanicals that don't meet our strict potency and purity standards. Quality is never negotiable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 4: TEAM
+═══════════════════════════════════════════ -->
+<section class="section bg-primary" aria-label="Our expert team">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>The Experts</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">Meet Our Master <em>Herbalists</em></h2>
+      <p class="section-subtitle mx-auto text-center" data-aos data-aos-delay="200">Our team brings together decades of clinical herbalism, phytochemistry, nutrition science, and mindfulness practice.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
+      <article class="team-card" data-aos data-aos-delay="100">
+        <img class="team-img" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Dr. Elena Voss — Founder and Chief Herbalist" loading="lazy" />
+        <div style="padding:1.5rem;">
+          <h5 style="margin-bottom:0.25rem;">Dr. Elena Voss</h5>
+          <div style="font-size:0.78rem;color:var(--clr-sage);font-weight:600;margin-bottom:0.75rem;">Founder · Chief Herbalist</div>
+          <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.7;">PhD Phytochemistry, Munich. 18 years in botanical medicine and clinical herbalism.</p>
+          <div style="display:flex;gap:0.5rem;margin-top:1rem;">
+            <span class="badge badge-sage">Sleep</span>
+            <span class="badge badge-gold">Adaptogens</span>
+          </div>
+        </div>
+      </article>
+      <article class="team-card" data-aos data-aos-delay="200">
+        <img class="team-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Marcus Chen — TCM Herbalist and Blend Master" loading="lazy" />
+        <div style="padding:1.5rem;">
+          <h5 style="margin-bottom:0.25rem;">Marcus Chen</h5>
+          <div style="font-size:0.78rem;color:var(--clr-gold);font-weight:600;margin-bottom:0.75rem;">TCM Herbalist · Blend Master</div>
+          <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.7;">30+ years in Traditional Chinese Medicine. Expert in meridian-based herbal synergy.</p>
+          <div style="display:flex;gap:0.5rem;margin-top:1rem;">
+            <span class="badge badge-gold">Digestion</span>
+            <span class="badge badge-sage">TCM</span>
+          </div>
+        </div>
+      </article>
+      <article class="team-card" data-aos data-aos-delay="300">
+        <img class="team-img" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=600&q=80" alt="Amara Osei — Ayurvedic Consultant" loading="lazy" />
+        <div style="padding:1.5rem;">
+          <h5 style="margin-bottom:0.25rem;">Amara Osei</h5>
+          <div style="font-size:0.78rem;color:var(--clr-lavender);font-weight:600;margin-bottom:0.75rem;">Ayurvedic Consultant</div>
+          <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.7;">Board-certified Ayurvedic Practitioner with specialisations in mind-body wellness and dosha-based blending.</p>
+          <div style="display:flex;gap:0.5rem;margin-top:1rem;">
+            <span class="badge badge-lavender">Stress</span>
+            <span class="badge badge-sage">Immunity</span>
+          </div>
+        </div>
+      </article>
+      <article class="team-card" data-aos data-aos-delay="400">
+        <img class="team-img" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Dr. Lina Hartmann — Quality and Sourcing Director" loading="lazy" />
+        <div style="padding:1.5rem;">
+          <h5 style="margin-bottom:0.25rem;">Dr. Lina Hartmann</h5>
+          <div style="font-size:0.78rem;color:var(--clr-rose);font-weight:600;margin-bottom:0.75rem;">Quality &amp; Sourcing Director</div>
+          <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.7;">Former botanist at Kew Gardens. Travels globally to verify ethical sourcing and botanical authenticity.</p>
+          <div style="display:flex;gap:0.5rem;margin-top:1rem;">
+            <span class="badge badge-rose">Quality</span>
+            <span class="badge badge-sage">Sourcing</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 5: TIMELINE
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--clr-forest-deep);" aria-label="Company timeline">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
+      <div>
+        <div class="section-label" style="color:var(--clr-gold);" data-aos>Our Journey</div>
+        <h2 class="section-title" style="color:#fff;" data-aos data-aos-delay="100">Eight Years of<br/><em style="color:var(--clr-gold-light);">Growth &amp; Impact</em></h2>
+        <p style="color:rgba(255,255,255,0.6);line-height:1.9;margin-bottom:2rem;" data-aos data-aos-delay="200">From a kitchen laboratory to a globally recognised wellness brand — every milestone driven by our passion for botanical healing.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;" data-aos data-aos-delay="300">
+          <div style="text-align:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-lg);padding:1.5rem;">
+            <div style="font-family:var(--ff-heading);font-size:2.5rem;color:var(--clr-gold);font-weight:700;">42</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;">Countries</div>
+          </div>
+          <div style="text-align:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-lg);padding:1.5rem;">
+            <div style="font-family:var(--ff-heading);font-size:2.5rem;color:var(--clr-gold);font-weight:700;">12</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;">Awards Won</div>
+          </div>
+          <div style="text-align:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-lg);padding:1.5rem;">
+            <div style="font-family:var(--ff-heading);font-size:2.5rem;color:var(--clr-gold);font-weight:700;">4.9</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;">Avg. Star Rating</div>
+          </div>
+          <div style="text-align:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-lg);padding:1.5rem;">
+            <div style="font-family:var(--ff-heading);font-size:2.5rem;color:var(--clr-gold);font-weight:700;">80+</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;">Unique Blends</div>
+          </div>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <div class="timeline-item">
+          <div><div class="timeline-year">2018</div></div>
+          <div>
+            <h5 style="color:#fff;margin-bottom:0.5rem;">Founded in San Francisco</h5>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">Dr. Elena Voss launches Verdana Apothecary with 8 blends, selling at farmers' markets and via a hand-coded website.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div><div class="timeline-year">2019</div></div>
+          <div>
+            <h5 style="color:#fff;margin-bottom:0.5rem;">First Retail Partnership</h5>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">Whole Foods Market features Verdana in 45 stores across California. Online revenue triples within 6 months.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div><div class="timeline-year">2021</div></div>
+          <div>
+            <h5 style="color:#fff;margin-bottom:0.5rem;">International Expansion</h5>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">Expanded to EU and UK markets. Won the Botanical Business of the Year award at the Global Wellness Summit.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div><div class="timeline-year">2023</div></div>
+          <div>
+            <h5 style="color:#fff;margin-bottom:0.5rem;">Wellness Clinic Launch</h5>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">Opened our first Botanical Wellness Clinic in San Francisco and launched telemedicine herbal consultations globally.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div><div class="timeline-year">2026</div></div>
+          <div>
+            <h5 style="color:#fff;margin-bottom:0.5rem;">50,000 Customers &amp; Growing</h5>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">Now serving 50,000+ subscribers across 42 countries with 80+ blends and an expanding line of wellness tools and rituals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 6: AWARDS + CTA
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg-secondary);" aria-label="Awards and call to action">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>Recognition</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">Trusted &amp; <em>Award-Winning</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem;">
+      <div class="award-badge" data-aos data-aos-delay="100">
+        <div class="award-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <div>
+          <div style="font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">Global Wellness Summit</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary);">Botanical Brand of the Year · 2021, 2023</div>
+        </div>
+      </div>
+      <div class="award-badge" data-aos data-aos-delay="200">
+        <div class="award-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div>
+          <div style="font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">Forbes Wellness 50</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary);">Top 50 Wellness Brands Worldwide · 2024</div>
+        </div>
+      </div>
+      <div class="award-badge" data-aos data-aos-delay="300">
+        <div class="award-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+        <div>
+          <div style="font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">USDA Certified Organic</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary);">All blends certified since 2019</div>
+        </div>
+      </div>
+      <div class="award-badge" data-aos data-aos-delay="100">
+        <div class="award-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></div>
+        <div>
+          <div style="font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">NSF Certified</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary);">Third-party quality verified</div>
+        </div>
+      </div>
+      <div class="award-badge" data-aos data-aos-delay="200">
+        <div class="award-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
+        <div>
+          <div style="font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">B-Corp Certified</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary);">Social &amp; environmental impact</div>
+        </div>
+      </div>
+      <div class="award-badge" data-aos data-aos-delay="300">
+        <div class="award-icon" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+        <div>
+          <div style="font-weight:700;color:var(--text-heading);margin-bottom:0.25rem;">1% for the Planet</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary);">1% of revenue to conservation</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,var(--clr-forest),var(--clr-forest-deep));border-radius:var(--r-2xl);padding:clamp(2.5rem,5vw,4rem);text-align:center;color:#fff;" data-aos>
+      <h2 style="font-family:var(--ff-heading);font-size:clamp(1.8rem,4vw,3rem);color:#fff;margin-bottom:1rem;">Join the Verdana Community</h2>
+      <p style="color:rgba(255,255,255,0.7);max-width:520px;margin:0 auto 2rem;line-height:1.8;">Start your botanical wellness journey today. Explore our services, book a consultation, or subscribe for your first curated box.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="services.html" class="btn btn-gold btn-lg">Explore Services</a>
+        <a href="contact.html"  class="btn btn-ghost btn-lg">Book Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<style>
+  @media(max-width:768px){
+    [style*="grid-template-columns:1fr 1fr"],[style*="grid-template-columns:repeat(4"],[style*="grid-template-columns:repeat(3"]{display:block!important;}
+    [style*="grid-template-columns:1fr 1fr"]>div,[style*="grid-template-columns:repeat(4"]>div,[style*="grid-template-columns:repeat(3"]>div,[style*="grid-template-columns:repeat(4"]>article{margin-bottom:1.5rem;}
+    [style*="grid-template-columns:1fr 1fr"]>:last-child,[style*="grid-template-columns:repeat(4"]>:last-child,[style*="grid-template-columns:repeat(3"]>:last-child{margin-bottom:0;}
+  }
+</style>
+</body>
+</html>

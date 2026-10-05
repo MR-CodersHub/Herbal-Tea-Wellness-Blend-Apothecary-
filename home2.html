@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Verdana Apothecary niche wellness blends — Sleep, Digestion, Immunity, Stress Relief, Energy & Detox herbal teas." />
+  <title>Verdana Apothecary — Niche Wellness Blends</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B8F71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E" />
+  <style>
+    .niche-hero { min-height:100dvh;display:flex;align-items:center;position:relative;overflow:hidden; }
+    .niche-hero-bg { position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,27,21,0.94) 0%,rgba(26,46,39,0.9) 45%,rgba(45,74,62,0.88) 100%),url('https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=1600&q=80') center/cover; }
+    .floating-leaf { position:absolute;opacity:0.07;font-size:clamp(4rem,8vw,8rem);pointer-events:none;animation:floatLeaf 8s ease-in-out infinite; }
+    @keyframes floatLeaf { 0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-30px) rotate(10deg);} }
+    .niche-card { border-radius:var(--r-xl);overflow:hidden;position:relative;aspect-ratio:3/4;cursor:pointer;transition:transform 0.5s ease; }
+    .niche-card:hover { transform:scale(1.03); }
+    .niche-card-bg { position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.7s ease; }
+    .niche-card:hover .niche-card-bg { transform:scale(1.08); }
+    .niche-card-overlay { position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,15,0.9) 0%,rgba(10,20,15,0.2) 60%,transparent 100%); }
+    .niche-card-content { position:absolute;bottom:0;left:0;right:0;padding:2rem;color:#fff; }
+    .niche-tag { display:inline-flex;align-items:center;gap:0.375rem;background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.4);border-radius:999px;padding:0.3rem 0.875rem;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-gold-light);margin-bottom:0.75rem; }
+    .ingredient-chip { display:inline-flex;align-items:center;gap:0.375rem;background:var(--bg-card);border:1px solid var(--border-color);border-radius:999px;padding:0.5rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text-secondary);transition:all 0.3s;cursor:default; }
+    .ingredient-chip:hover { border-color:var(--clr-sage);color:var(--clr-forest);transform:translateY(-2px);box-shadow:var(--shadow-sm); }
+    .wellness-goal-btn { padding:0.625rem 1.5rem;border-radius:999px;font-size:0.85rem;font-weight:600;border:1.5px solid var(--border-color);background:var(--bg-card);color:var(--text-secondary);cursor:pointer;transition:all 0.3s; }
+    .wellness-goal-btn.active, .wellness-goal-btn:hover { background:var(--clr-forest);color:#fff;border-color:var(--clr-forest); }
+    .blend-timeline-item { display:flex;gap:2rem;margin-bottom:3rem;align-items:flex-start; }
+    .blend-timeline-dot { width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--clr-forest),var(--clr-sage));display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;box-shadow:0 8px 24px rgba(45,74,62,0.3); }
+    /* ── Our Process: bordered premium cards ── */
+    .process-grid { position:relative; }
+    .process-grid::before { content:"";position:absolute;top:66px;left:12%;right:12%;border-top:2px dashed var(--border-color);pointer-events:none; }
+    .process-card { background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--r-xl);padding:2rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;height:100%;box-sizing:border-box;transition:transform 0.35s ease,box-shadow 0.35s ease,border-color 0.35s ease;z-index:1; }
+    .process-card::before { content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#C9A84C,#6B8F71);opacity:0;transition:opacity 0.3s ease; }
+    .process-card:hover { transform:translateY(-6px);border-color:rgba(201,168,76,0.55);box-shadow:0 20px 45px rgba(0,0,0,0.12); }
+    .process-card:hover::before { opacity:1; }
+    .process-badge { display:inline-flex;align-items:center;font-size:0.7rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--clr-forest);background:var(--clr-sage-mist);border:1px solid var(--border-color);border-radius:999px;padding:0.35rem 0.9rem;margin-bottom:1rem; }
+    .process-card .step-icon { width:72px;height:72px;margin:0 auto 1.1rem;position:relative;z-index:1;border:3px solid var(--bg-card);outline:2px solid var(--border-color);flex-shrink:0; }
+    .process-card h5 { margin-bottom:0.75rem;position:relative;z-index:1; }
+    .process-card p { position:relative;z-index:1; }
+    @media(max-width:1024px){ .process-grid{grid-template-columns:repeat(2,1fr)!important;} .process-grid::before{display:none;} }
+    @media(max-width:560px){ .process-grid{grid-template-columns:1fr!important;} }
+  </style>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 1: NICHE HERO — DARK BOTANICAL
+═══════════════════════════════════════════ -->
+<section class="niche-hero" id="top" aria-label="Niche wellness blends hero">
+  <div class="niche-hero-bg"></div>
+  <!-- Decorative floating elements -->
+  <span class="floating-leaf" style="top:10%;left:5%;animation-delay:0s;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+  <span class="floating-leaf" style="top:20%;right:8%;animation-delay:2s;font-size:5rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="m4.9 4.9 2.1 2.1"/><path d="m17 17 2.1 2.1"/><path d="m19.1 4.9-2.1 2.1"/><path d="m7 17-2.1 2.1"/></svg></span>
+  <span class="floating-leaf" style="bottom:30%;left:15%;animation-delay:4s;font-size:6rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+  <span class="floating-leaf" style="bottom:15%;right:10%;animation-delay:1s;font-size:4rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3a4.5 4.5 0 1 0 4.5 4.5M7.5 12H9m7.5 0a4.5 4.5 0 1 1-4.5 4.5m4.5-4.5H15m-3 3.5V15"/><circle cx="12" cy="12" r="10"/></svg></span>
+
+  <div class="container" style="position:relative;z-index:2;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;min-height:100dvh;padding:7rem 0 4rem;">
+      <div style="text-align:center;">
+        <div class="hero-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg> Precision Wellness · Niche Blends</div>
+        <h1 class="hero-title" style="font-size:clamp(2.5rem,5.5vw,5rem);">
+          Your Goal,<br/>Our <em>Botanical</em><br/>Formula
+        </h1>
+        <p class="hero-subtitle" style="margin-inline:auto;">
+          Six targeted herbal wellness categories — each blend precision-crafted with the exact botanicals your body needs. Sleep deeper. Digest better. Stress less.
+        </p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2.5rem;justify-content:center;">
+          <a href="#sleep"     class="btn btn-ghost btn-sm"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg> Sleep</a>
+          <a href="#digestion" class="btn btn-ghost btn-sm"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Digestion</a>
+          <a href="#immunity"  class="btn btn-ghost btn-sm"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg> Immunity</a>
+          <a href="#stress"    class="btn btn-ghost btn-sm"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> Stress</a>
+          <a href="#energy"    class="btn btn-ghost btn-sm"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg> Energy</a>
+          <a href="#detox"     class="btn btn-ghost btn-sm"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg> Detox</a>
+        </div>
+        <a href="pricing.html" class="btn btn-gold btn-lg">Start Your Journey</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:stretch;grid-auto-rows:1fr;">
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-xl);padding:1.5rem;backdrop-filter:blur(8px);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;height:100%;box-sizing:border-box;">
+          <div class="value-icon" style="justify-content:center;margin-bottom:0.75rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></div>
+          <div style="color:#fff;font-weight:600;font-family:var(--ff-heading);font-size:1.1rem;margin-bottom:0.25rem;">Sleep Serenity</div>
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);">Lavender · Valerian · Lemon Balm</div>
+        </div>
+        <div style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:var(--r-xl);padding:1.5rem;backdrop-filter:blur(8px);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;height:100%;box-sizing:border-box;">
+          <div class="value-icon" style="justify-content:center;margin-bottom:0.75rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+          <div style="color:#fff;font-weight:600;font-family:var(--ff-heading);font-size:1.1rem;margin-bottom:0.25rem;">Gentle Digest</div>
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);">Peppermint · Ginger · Fennel</div>
+        </div>
+        <div style="background:rgba(139,123,168,0.1);border:1px solid rgba(139,123,168,0.25);border-radius:var(--r-xl);padding:1.5rem;backdrop-filter:blur(8px);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;height:100%;box-sizing:border-box;">
+          <div class="value-icon" style="justify-content:center;margin-bottom:0.75rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div style="color:#fff;font-weight:600;font-family:var(--ff-heading);font-size:1.1rem;margin-bottom:0.25rem;">Immunity Shield</div>
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);">Elderberry · Echinacea · Ginger</div>
+        </div>
+        <div style="background:rgba(107,143,113,0.1);border:1px solid rgba(107,143,113,0.25);border-radius:var(--r-xl);padding:1.5rem;backdrop-filter:blur(8px);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;height:100%;box-sizing:border-box;">
+          <div class="value-icon" style="justify-content:center;margin-bottom:0.75rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:36px;height:36px;"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+          <div style="color:#fff;font-weight:600;font-family:var(--ff-heading);font-size:1.1rem;margin-bottom:0.25rem;">Calm &amp; Balance</div>
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);">Ashwagandha · Holy Basil · Rose</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 2: NICHE CATEGORY DEEP DIVES
+═══════════════════════════════════════════ -->
+<section class="section bg-primary" aria-label="Niche wellness categories">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>Wellness Goals</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">
+        Six Paths to <em>Complete Wellness</em>
+      </h2>
+      <p class="section-subtitle mx-auto text-center" data-aos data-aos-delay="200">
+        Every body is different. Our niche blends target your specific wellness needs with clinically studied botanicals.
+      </p>
+    </div>
+
+    <!-- Sleep -->
+    <div id="sleep" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:6rem;scroll-margin-top:100px;">
+      <div data-aos="fade-right">
+        <div style="background:linear-gradient(135deg,#1a1035,#2d1b69);border-radius:var(--r-xl);padding:3rem;position:relative;overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;">
+          <div style="position:absolute;top:2rem;right:2rem;opacity:0.2;color:#fff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:80px;height:80px;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></div>
+          <div style="position:absolute;inset:0;background-image:url('assets/images/sleep-blend.jpg');background-size:cover;background-position:center;opacity:0.4;border-radius:var(--r-xl);"></div>
+          <div style="position:relative;z-index:1;">
+            <div class="niche-tag">Sleep & Rest</div>
+            <h3 style="color:#fff;font-size:2rem;margin-bottom:0.75rem;">Sleep Serenity Blend</h3>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Drift into deep, restorative sleep within 30 minutes</p>
+          </div>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <div class="niche-tag" style="background:rgba(139,123,168,0.15);border-color:rgba(139,123,168,0.35);color:var(--clr-lavender);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg> Sleep</div>
+        <h3 style="font-size:clamp(1.6rem,3vw,2.5rem);margin:1rem 0;">Fall Asleep Faster,<br/>Stay Asleep Longer</h3>
+        <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:1.5rem;">Our Sleep Serenity blend combines traditional sedative herbs in scientifically validated ratios. Unlike sleep aids, there's no dependency or morning grogginess — just deep, natural sleep.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;">
+          <span class="ingredient-chip">Lavender</span>
+          <span class="ingredient-chip">Valerian Root</span>
+          <span class="ingredient-chip">Lemon Balm</span>
+          <span class="ingredient-chip">Passionflower</span>
+          <span class="ingredient-chip">Chamomile</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;">
+          <div style="text-align:center;padding:1rem;background:var(--bg-card);border-radius:var(--r-lg);border:1px solid var(--border-color);">
+            <div style="font-family:var(--ff-heading);font-size:2rem;color:var(--clr-lavender);font-weight:700;">87%</div>
+            <div style="font-size:0.78rem;color:var(--text-secondary);">Report improved sleep</div>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--bg-card);border-radius:var(--r-lg);border:1px solid var(--border-color);">
+            <div style="font-family:var(--ff-heading);font-size:2rem;color:var(--clr-lavender);font-weight:700;">30min</div>
+            <div style="font-size:0.78rem;color:var(--text-secondary);">Average time to sleep</div>
+          </div>
+        </div>
+        <a href="service-detail.html" class="btn btn-primary">Shop Sleep Blends →</a>
+      </div>
+    </div>
+
+    <!-- Digestion -->
+    <div id="digestion" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:6rem;scroll-margin-top:100px;">
+      <div data-aos="fade-right" style="order:2;">
+        <div class="niche-tag" style="background:rgba(107,143,113,0.1);border-color:rgba(107,143,113,0.3);color:var(--clr-sage);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Digestion</div>
+        <h3 style="font-size:clamp(1.6rem,3vw,2.5rem);margin:1rem 0;">Soothe, Nourish &<br/>Restore Gut Health</h3>
+        <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:1.5rem;">Our Gentle Digest blend tackles bloating, discomfort, and irregular digestion with a combination of carminative and prebiotic herbs that work with your gut microbiome.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;">
+          <span class="ingredient-chip">Peppermint</span>
+          <span class="ingredient-chip">Ginger Root</span>
+          <span class="ingredient-chip">Fennel Seed</span>
+          <span class="ingredient-chip">Chamomile</span>
+          <span class="ingredient-chip">Licorice Root</span>
+        </div>
+        <a href="service-detail.html" class="btn btn-primary">Shop Digestion Blends →</a>
+      </div>
+      <div data-aos="fade-left" style="order:1;">
+        <div style="background:linear-gradient(135deg,#0d2015,#1a3d2a);border-radius:var(--r-xl);padding:3rem;position:relative;overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;">
+          <div style="position:absolute;top:2rem;right:2rem;opacity:0.15;color:#fff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:80px;height:80px;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+          <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;opacity:0.45;border-radius:var(--r-xl);"></div>
+          <div style="position:relative;z-index:1;">
+            <div class="niche-tag">Digestive Health</div>
+            <h3 style="color:#fff;font-size:2rem;margin-bottom:0.75rem;">Gentle Digest Blend</h3>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Calm bloating and nourish your gut microbiome naturally</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Immunity + Stress side by side -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem;">
+      <div id="immunity" style="background:var(--bg-card);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border-color);scroll-margin-top:100px;" data-aos>
+        <div class="niche-tag" style="background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.3);color:var(--clr-gold);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg> Immunity</div>
+        <h4 style="font-size:1.6rem;margin:1rem 0;">Immunity Shield</h4>
+        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem;">Fortify your immune system year-round with elderberry, echinacea, astragalus, and turmeric — nature's most powerful immune-activating botanicals.</p>
+        <div style="margin-bottom:1.5rem;">
+          <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-secondary);margin-bottom:0.5rem;">Key Benefits</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Activates natural killer cells</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Reduces cold duration by 58%</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Rich in antioxidants & vitamins</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Safe for daily long-term use</div>
+          </div>
+        </div>
+        <a href="service-detail.html" class="btn btn-gold btn-sm">Shop Immunity →</a>
+      </div>
+      <div id="stress" style="background:var(--bg-card);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border-color);scroll-margin-top:100px;" data-aos data-aos-delay="150">
+        <div class="niche-tag" style="background:rgba(196,120,110,0.1);border-color:rgba(196,120,110,0.3);color:var(--clr-rose);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> Stress Relief</div>
+        <h4 style="font-size:1.6rem;margin:1rem 0;">Calm &amp; Balance</h4>
+        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem;">Adaptogenic herbs like ashwagandha, rhodiola, and holy basil help your body adapt to stress, reduce cortisol, and promote mental clarity and emotional balance.</p>
+        <div style="margin-bottom:1.5rem;">
+          <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-secondary);margin-bottom:0.5rem;">Key Benefits</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Lowers cortisol naturally</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Enhances focus & clarity</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Non-sedating adaptogen formula</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;"><span class="inline-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span> Promotes emotional resilience</div>
+          </div>
+        </div>
+        <a href="service-detail.html" class="btn btn-outline btn-sm">Shop Stress Relief →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 3: ENERGY & DETOX BLENDS
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--clr-sage-mist);" aria-label="Energy and detox blends">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>Premium Blends</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">Energy &amp; <em>Detox</em> Collections</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:3fr 2fr;gap:2rem;align-items:stretch;">
+      <div id="energy" style="background:var(--bg-card);border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border-color);scroll-margin-top:100px;" data-aos="fade-right">
+        <div style="height:240px;background-image:url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center bottom;"></div>
+        <div style="padding:2.5rem;">
+          <div class="niche-tag" style="background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.3);color:var(--clr-gold);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg> Energy & Focus</div>
+          <h4 style="font-size:1.75rem;margin:1rem 0;">Vitality &amp; Focus Blend</h4>
+          <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:1.5rem;">Harness the clean, sustained energy of green tea, guaraná, and lion's mane mushroom — no jitters, no crash. Just steady focus and mental clarity that lasts all day.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+            <span class="ingredient-chip">Matcha Green Tea</span>
+            <span class="ingredient-chip">Lion's Mane</span>
+            <span class="ingredient-chip">Ginseng</span>
+            <span class="ingredient-chip">Moringa</span>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+            <a href="service-detail.html" class="btn btn-gold">Shop Energy Blends</a>
+            <span style="font-size:0.85rem;color:var(--text-secondary);">From <strong style="color:var(--text-heading);">$28</strong>/month</span>
+          </div>
+        </div>
+      </div>
+      <div id="detox" style="background:var(--bg-card);border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border-color);scroll-margin-top:100px;" data-aos="fade-left">
+        <div style="height:240px;background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;"></div>
+        <div style="padding:2.5rem;">
+          <div class="niche-tag" style="background:rgba(107,143,113,0.1);border-color:rgba(107,143,113,0.3);color:var(--clr-sage);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg> Detox</div>
+          <h4 style="font-size:1.75rem;margin:1rem 0;">Deep Cleanse Detox</h4>
+          <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:1.5rem;">A gentle 30-day cleanse blend with dandelion root, milk thistle, and nettle to support liver detoxification and whole-body renewal.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+            <span class="ingredient-chip">Dandelion Root</span>
+            <span class="ingredient-chip">Milk Thistle</span>
+            <span class="ingredient-chip">Nettle Leaf</span>
+          </div>
+          <a href="service-detail.html" class="btn btn-primary">Shop Detox →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 4: HOW IT WORKS — PROCESS
+═══════════════════════════════════════════ -->
+<section class="section bg-primary" aria-label="How our blending process works">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" data-aos>Our Process</div>
+      <h2 class="section-title" data-aos data-aos-delay="100">From <em>Garden to Cup</em> — 4 Steps</h2>
+    </div>
+    <div class="process-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;align-items:stretch;" role="list">
+      <div class="step-card process-card" data-aos data-aos-delay="100" role="listitem">
+        <span class="process-badge">Step 01</span>
+        <div class="step-icon" style="background:linear-gradient(135deg,#2D4A3E,#6B8F71);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.3-2.7.1-4 1-4.9 1.7z"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Ethical Sourcing</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">We partner directly with certified organic farms in 32 countries, ensuring fair trade and sustainable harvesting practices.</p>
+      </div>
+      <div class="step-card process-card" data-aos data-aos-delay="200" role="listitem">
+        <span class="process-badge">Step 02</span>
+        <div class="step-icon" style="background:linear-gradient(135deg,#C9A84C,#8B6914);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Lab Testing</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Every batch undergoes rigorous third-party testing for heavy metals, pesticides, and potency verification before blending.</p>
+      </div>
+      <div class="step-card process-card" data-aos data-aos-delay="300" role="listitem">
+        <span class="process-badge">Step 03</span>
+        <div class="step-icon" style="background:linear-gradient(135deg,#8B7BA8,#5B4B78);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Expert Blending</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Our master herbalists combine botanicals in precise ratios to create synergistic blends that are greater than the sum of their parts.</p>
+      </div>
+      <div class="step-card process-card" data-aos data-aos-delay="400" role="listitem">
+        <span class="process-badge">Step 04</span>
+        <div class="step-icon" style="background:linear-gradient(135deg,#C4786E,#8B4A44);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg></div>
+        <h5 style="margin-bottom:0.75rem;">Eco Delivery</h5>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.8;">Sealed in nitrogen-flushed, compostable packaging to preserve freshness, then shipped directly to your door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 5: INGREDIENT SPOTLIGHT
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--clr-forest-deep);color:#fff;" aria-label="Star ingredients spotlight">
+  <div class="container">
+    <div class="text-center mb-12">
+      <div class="section-label mx-auto" style="color:var(--clr-gold);" data-aos>Star Ingredients</div>
+      <h2 class="section-title" style="color:#fff;" data-aos data-aos-delay="100">Nature's Most <em style="color:var(--clr-gold-light);">Powerful</em> Healers</h2>
+      <p style="color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto;line-height:1.8;" data-aos data-aos-delay="200">Each ingredient is selected for its clinical evidence base and traditional use across centuries of herbal medicine.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:2rem;transition:all 0.3s;" data-aos data-aos-delay="100">
+        <div class="value-icon" style="margin-bottom:1rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="m4.9 4.9 2.1 2.1"/><path d="m17 17 2.1 2.1"/><path d="m19.1 4.9-2.1 2.1"/><path d="m7 17-2.1 2.1"/></svg></div>
+        <h5 style="color:#fff;margin-bottom:0.5rem;">Chamomile</h5>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">The gentlest of sedatives. Rich in apigenin that binds to GABA receptors, reducing anxiety and promoting sleep without side effects.</p>
+        <div style="margin-top:1rem;font-size:0.75rem;color:var(--clr-gold);font-weight:600;">Best For: Sleep · Anxiety · Digestion</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:2rem;transition:all 0.3s;" data-aos data-aos-delay="200">
+        <div class="value-icon" style="margin-bottom:1rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+        <h5 style="color:#fff;margin-bottom:0.5rem;">Ginger Root</h5>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">A warming, versatile root with potent anti-inflammatory gingerols. Supports digestion, boosts circulation, and reinforces immune response.</p>
+        <div style="margin-top:1rem;font-size:0.75rem;color:var(--clr-gold);font-weight:600;">Best For: Digestion · Immunity · Inflammation</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:2rem;transition:all 0.3s;" data-aos data-aos-delay="300">
+        <div class="value-icon" style="margin-bottom:1rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.3-2.7.1-4 1-4.9 1.7z"/></svg></div>
+        <h5 style="color:#fff;margin-bottom:0.5rem;">Ashwagandha</h5>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">The king of Ayurvedic adaptogens. Clinically proven to reduce cortisol by up to 27%, improving stress resilience and overall vitality.</p>
+        <div style="margin-top:1rem;font-size:0.75rem;color:var(--clr-gold);font-weight:600;">Best For: Stress · Energy · Hormones</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:2rem;transition:all 0.3s;" data-aos data-aos-delay="100">
+        <div class="value-icon" style="margin-bottom:1rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+        <h5 style="color:#fff;margin-bottom:0.5rem;">Elderberry</h5>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">Extraordinarily rich in anthocyanins and quercetin. Activates cytokine production and reduces cold/flu duration by up to 50% in trials.</p>
+        <div style="margin-top:1rem;font-size:0.75rem;color:var(--clr-gold);font-weight:600;">Best For: Immunity · Cold & Flu · Antioxidant</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:2rem;transition:all 0.3s;" data-aos data-aos-delay="200">
+        <div class="value-icon" style="margin-bottom:1rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></div>
+        <h5 style="color:#fff;margin-bottom:0.5rem;">Turmeric</h5>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">Golden healer. Curcumin is one of the most studied natural anti-inflammatories, supporting joints, brain health, and liver detoxification.</p>
+        <div style="margin-top:1rem;font-size:0.75rem;color:var(--clr-gold);font-weight:600;">Best For: Inflammation · Liver · Brain</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:2rem;transition:all 0.3s;" data-aos data-aos-delay="300">
+        <div class="value-icon" style="margin-bottom:1rem;color:var(--clr-gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg></div>
+        <h5 style="color:#fff;margin-bottom:0.5rem;">Peppermint</h5>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.8;">A digestive powerhouse and natural energiser. Menthol relaxes intestinal muscles, relieving IBS, bloating, and morning fatigue simultaneously.</p>
+        <div style="margin-top:1rem;font-size:0.75rem;color:var(--clr-gold);font-weight:600;">Best For: Digestion · Energy · Headaches</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SECTION 6: QUIZ CTA + FAQ
+═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg-secondary);" aria-label="Wellness quiz and FAQ">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+      <div data-aos="fade-right">
+        <div class="section-label">Find Your Blend</div>
+        <h2 class="section-title">Not Sure Where<br/>to <em>Start?</em></h2>
+        <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:2rem;">Take our 2-minute wellness quiz and receive a personalised blend recommendation from our herbalists — absolutely free, no purchase required.</p>
+        <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);margin-bottom:1.5rem;">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--clr-sage-mist);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">1</div>
+            <div><strong>Tell us your wellness goal</strong><br/><span style="font-size:0.85rem;color:var(--text-secondary);">Sleep, digestion, energy, immunity, stress, or detox</span></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--clr-sage-mist);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">2</div>
+            <div><strong>Share your lifestyle &amp; preferences</strong><br/><span style="font-size:0.85rem;color:var(--text-secondary);">Taste, restrictions, and health history</span></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--clr-gold-pale);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">3</div>
+            <div><strong>Receive your personalised recommendation</strong><br/><span style="font-size:0.85rem;color:var(--text-secondary);">Via email within minutes, with a 15% discount code</span></div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-gold btn-lg">Take the Wellness Quiz →</a>
+      </div>
+      <div data-aos="fade-left">
+        <div class="section-label">FAQ</div>
+        <h3 style="font-size:1.8rem;margin-bottom:2rem;">Common <em>Questions</em></h3>
+        <div class="accordion-wrap" data-exclusive="true">
+          <div class="accordion-item open">
+            <button class="accordion-header">Are your blends safe for daily use?<span class="accordion-icon">+</span></button>
+            <div class="accordion-body"><div class="accordion-content">Yes! All our blends are formulated for daily use and contain herbs classified as Generally Recognized As Safe (GRAS) by the FDA. We clearly label any blends not suitable for pregnancy or certain medications.</div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">How long until I see results?<span class="accordion-icon">+</span></button>
+            <div class="accordion-body"><div class="accordion-content">Most customers notice immediate benefits like improved digestion or reduced stress within days. For deeper issues like sleep patterns or immunity, consistent use for 2–4 weeks typically shows significant results.</div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Can I mix blends from different categories?<span class="accordion-icon">+</span></button>
+            <div class="accordion-body"><div class="accordion-content">Absolutely! Many of our customers enjoy multiple blends throughout the day — an energising blend in the morning and a sleep blend in the evening. Our herbalists can advise on the best combinations for your goals.</div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Do you offer samples before I subscribe?<span class="accordion-icon">+</span></button>
+            <div class="accordion-body"><div class="accordion-content">Yes! We offer a Discovery Sample Pack (6 sachets of your chosen category) for just $12, with the full cost credited toward your first subscription. This lets you experience the quality before committing.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<style>
+  @media(max-width:768px){
+    #sleep,#digestion,[style*="grid-template-columns:3fr 2fr"],[style*="grid-template-columns:repeat(4"]:not(.process-grid),[style*="grid-template-columns:repeat(3"]{
+      display:block!important;
+    }
+    #sleep>div,#digestion>div,[style*="grid-template-columns:3fr 2fr"]>div,[style*="grid-template-columns:repeat(4"]:not(.process-grid)>div,[style*="grid-template-columns:repeat(3"]>div{
+      margin-bottom:1.5rem;
+    }
+    #sleep>div:last-child,#digestion>div:last-child,[style*="grid-template-columns:repeat(3"]>div:last-child,[style*="grid-template-columns:repeat(4"]:not(.process-grid)>div:last-child{margin-bottom:0;}
+    #digestion>div:first-child{order:0!important;}
+    /* hero: outer stacks, inner 4 cards stay visible in equal 2-col grid */
+    .niche-hero [style*="min-height:100dvh"]{display:block!important;min-height:auto!important;padding:6rem 0 3rem!important;}
+    .niche-hero [style*="grid-auto-rows:1fr"]{margin-top:2rem;}
+  }
+  @media(max-width:480px){
+    .niche-hero [style*="grid-auto-rows:1fr"]{gap:0.75rem;}
+    .niche-hero [style*="grid-auto-rows:1fr"]>div{min-height:170px!important;padding:1.25rem 1rem!important;}
+  }
+</style>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex"/>
+  <title>Page Not Found — Verdana Apothecary</title>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B8F71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E"/>
+  <style>
+    .error-page{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;background:var(--bg-primary);position:relative;overflow:hidden;}
+    .error-number{font-family:var(--ff-heading);font-size:clamp(8rem,25vw,18rem);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--clr-forest),var(--clr-sage),var(--clr-gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;user-select:none;}
+    .floating-leaf{position:absolute;font-size:clamp(1.5rem,3vw,2.5rem);animation:floatLeaf var(--dur,8s) ease-in-out infinite;animation-delay:var(--delay,0s);opacity:0.15;pointer-events:none;}
+    @keyframes floatLeaf{0%,100%{transform:translateY(0) rotate(0deg);}25%{transform:translateY(-30px) rotate(8deg);}75%{transform:translateY(15px) rotate(-5deg);}}
+    .suggestion-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--r-lg);padding:1rem 1.5rem;display:flex;align-items:center;gap:0.875rem;transition:all 0.3s;text-decoration:none;color:var(--text-heading);}
+    .suggestion-card:hover{border-color:var(--clr-sage);transform:translateY(-3px);box-shadow:var(--shadow-md);}
+    /* Solid navbar from the top: this page opens on a light surface,
+       so transparent white-on-cream links would be unreadable */
+    .navbar{background:var(--navbar-bg);padding:0.75rem 0;box-shadow:0 4px 30px rgba(0,0,0,0.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+    .navbar .nav-link{color:var(--text-primary);}
+    .navbar .nav-brand{color:var(--clr-earth);}
+    .navbar .nav-brand span{color:var(--clr-sage);}
+    .navbar .hamburger span{background:var(--text-primary);}
+    .navbar .theme-toggle{background:var(--clr-sage-mist);border-color:var(--border-color);color:var(--clr-forest);}
+    [data-theme="dark"] .navbar .nav-brand{color:var(--clr-gold);}
+    [data-theme="dark"] .navbar .nav-brand span{color:var(--clr-sage-light);}
+    [data-theme="dark"] .navbar .theme-toggle{background:rgba(107,143,113,0.16);border-color:rgba(107,143,113,0.35);color:var(--clr-sage-light);}
+  </style>
+</head>
+<body>
+
+<!-- Floating decorative icons -->
+<div class="floating-leaf" style="top:8%;left:5%;--dur:9s;--delay:0s;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+<div class="floating-leaf" style="top:15%;right:8%;--dur:11s;--delay:-3s;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="m4.9 4.9 2.1 2.1"/><path d="m17 17 2.1 2.1"/><path d="m19.1 4.9-2.1 2.1"/><path d="m7 17-2.1 2.1"/></svg></div>
+<div class="floating-leaf" style="bottom:20%;left:10%;--dur:7s;--delay:-5s;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+<div class="floating-leaf" style="bottom:10%;right:12%;--dur:13s;--delay:-2s;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/></svg></div>
+<div class="floating-leaf" style="top:40%;left:3%;--dur:10s;--delay:-7s;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3a4.5 4.5 0 1 0 4.5 4.5M7.5 12H9m7.5 0a4.5 4.5 0 1 1-4.5 4.5m4.5-4.5H15m-3 3.5V15"/><circle cx="12" cy="12" r="10"/></svg></div>
+<div class="floating-leaf" style="top:50%;right:4%;--dur:8s;--delay:-4s;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.3-2.7.1-4 1-4.9 1.7z"/></svg></div>
+
+<div id="navbar-placeholder"></div>
+
+<div class="error-page">
+  <div class="error-number" aria-hidden="true">404</div>
+  <div style="max-width:540px;position:relative;z-index:1;">
+    <h1 style="font-size:clamp(1.6rem,4vw,2.5rem);margin-bottom:1rem;">We Lost This Leaf in the Garden</h1>
+    <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.8;margin-bottom:2.5rem;">The page you were looking for has wandered off into the botanical wilderness. Don't worry — nature has a way of finding a new path.</p>
+
+    <!-- Search -->
+    <div style="display:flex;gap:0;background:var(--bg-card);border:1.5px solid var(--border-color);border-radius:999px;overflow:hidden;margin-bottom:2.5rem;box-shadow:var(--shadow-md);">
+      <label for="err-search" style="position:absolute;width:1px;height:1px;overflow:hidden;">Search site</label>
+      <input type="search" id="err-search" style="flex:1;border:none;background:transparent;padding:1rem 1.5rem;font-family:var(--ff-body);font-size:0.9rem;outline:none;color:var(--text-primary);" placeholder="Search the garden..." aria-label="Search site"/>
+      <button style="background:var(--clr-forest);color:#fff;border:none;padding:1rem 1.75rem;cursor:pointer;transition:background 0.2s;border-radius:0 999px 999px 0;display:flex;align-items:center;justify-content:center;" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
+    </div>
+
+    <!-- Suggestions -->
+    <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);margin-bottom:1rem;">Maybe you were looking for...</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.875rem;margin-bottom:2.5rem;text-align:left;">
+      <a href="index.html" class="suggestion-card"><span class="suggestion-icon" style="display:inline-flex;color:var(--clr-forest);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span style="font-size:0.875rem;font-weight:600;">Homepage</span></a>
+      <a href="services.html" class="suggestion-card"><span class="suggestion-icon" style="display:inline-flex;color:var(--clr-forest);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><span style="font-size:0.875rem;font-weight:600;">Our Services</span></a>
+      <a href="blog.html" class="suggestion-card"><span class="suggestion-icon" style="display:inline-flex;color:var(--clr-forest);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span style="font-size:0.875rem;font-weight:600;">Wellness Blog</span></a>
+      <a href="contact.html" class="suggestion-card"><span class="suggestion-icon" style="display:inline-flex;color:var(--clr-forest);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span style="font-size:0.875rem;font-weight:600;">Contact Us</span></a>
+      <a href="pricing.html" class="suggestion-card"><span class="suggestion-icon" style="display:inline-flex;color:var(--clr-forest);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span><span style="font-size:0.875rem;font-weight:600;">Pricing Plans</span></a>
+      <a href="about.html" class="suggestion-card"><span class="suggestion-icon" style="display:inline-flex;color:var(--clr-forest);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/></svg></span><span style="font-size:0.875rem;font-weight:600;">About Verdana</span></a>
+    </div>
+
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="index.html" class="btn btn-gold btn-lg">← Return to Home</a>
+      <a href="contact.html" class="btn btn-outline btn-lg">Contact Support</a>
+    </div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
