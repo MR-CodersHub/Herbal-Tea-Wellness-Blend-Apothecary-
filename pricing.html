@@ -15,14 +15,15 @@
     .toggle-pill.active .toggle-thumb{transform:translateX(24px);}
     .toggle-label{font-size:0.9rem;font-weight:600;color:var(--text-secondary);}
     .toggle-label.active{color:var(--clr-forest);}
-    .compare-table{width:100%;border-collapse:collapse;font-size:0.875rem;}
-    .compare-table th{padding:1rem 1.5rem;text-align:left;background:var(--bg-card);border-bottom:2px solid var(--border-color);font-family:var(--ff-body);font-weight:700;color:var(--text-heading);}
+    .compare-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:0.875rem;}
+    .compare-table th{padding:0.875rem 1.5rem;text-align:left;background:var(--bg-card);border-bottom:2px solid var(--border-color);font-family:var(--ff-body);font-weight:700;color:var(--text-heading);}
     .compare-table td{padding:0.875rem 1.5rem;border-bottom:1px solid var(--border-color);color:var(--text-secondary);}
     .compare-table tr:last-child td{border-bottom:none;}
     .compare-table tr:hover td{background:var(--clr-sage-mist);}
     .compare-table .yes{color:var(--clr-sage);font-weight:700;}
     .compare-table .no{color:#cbd5e1;}
     .compare-table .featured-col{background:rgba(45,74,62,0.04);font-weight:600;color:var(--text-heading);}
+    @media(max-width:900px){.compare-table th,.compare-table td{padding-left:0.75rem;padding-right:0.75rem;}}
     .addon-card{background:var(--bg-card);border-radius:var(--r-xl);border:1px solid var(--border-color);padding:1.75rem;transition:all 0.3s;display:flex;gap:1rem;align-items:flex-start;}
     .addon-card:hover{border-color:var(--clr-sage);box-shadow:var(--shadow-md);}
   </style>
@@ -34,12 +35,12 @@
 <section class="page-hero">
   <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1463320726281-696a485928c7?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;opacity:0.1;"></div>
   <div class="container" style="position:relative;z-index:1;">
+    <div class="breadcrumb" style="margin-bottom:1.5rem;" data-aos data-aos-delay="300">
+      <a href="index.html">Home</a><span class="breadcrumb-sep">Pricing</span>
+    </div>
     <div class="hero-badge" style="justify-content:center;margin-bottom:1.5rem;" data-aos><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg> Simple &amp; Transparent</div>
     <h1 data-aos data-aos-delay="100">Wellness <em style="color:var(--clr-gold-light);">Plans</em></h1>
     <p style="color:rgba(255,255,255,0.7);max-width:560px;margin:1.5rem auto 0;line-height:1.8;" data-aos data-aos-delay="200">No hidden fees. No long-term contracts. Just honest pricing for premium botanical wellness. Cancel or pause anytime.</p>
-    <div class="breadcrumb" style="margin-top:2rem;" data-aos data-aos-delay="300">
-      <a href="index.html">Home</a><span class="breadcrumb-sep">Pricing</span>
-    </div>
   </div>
 </section>
 
@@ -58,7 +59,7 @@
     </div>
 
     <!-- Plans -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;align-items:end;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;align-items:stretch;">
       <!-- Free -->
       <div class="pricing-card" data-aos data-aos-delay="100">
         <div class="value-icon" style="justify-content:center;margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:40px;height:40px;"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.3-2.7.1-4 1-4.9 1.7z"/></svg></div>
@@ -73,7 +74,7 @@
           <li class="price-feature"><span class="x-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span><span style="opacity:0.4;">Custom blend consultation</span></li>
           <li class="price-feature"><span class="x-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span><span style="opacity:0.4;">Monthly box delivery</span></li>
         </ul>
-        <a href="login.html" class="btn btn-outline w-100" style="justify-content:center;">Get Started Free</a>
+        <a href="login.html" class="btn btn-gold w-100" style="justify-content:center;">Get Started Free</a>
       </div>
 
       <!-- Essentials -->
@@ -90,7 +91,7 @@
           <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>15% off add-on products</li>
           <li class="price-feature"><span class="x-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span><span style="opacity:0.4;">Consultation sessions</span></li>
         </ul>
-        <a href="login.html" class="btn btn-outline w-100" style="justify-content:center;">Choose Garden</a>
+        <a href="login.html" class="btn btn-gold w-100" style="justify-content:center;">Choose Garden</a>
       </div>
 
       <!-- Wellness — FEATURED -->
@@ -125,7 +126,7 @@
           <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Priority lab-tested batches</li>
           <li class="price-feature"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Exclusive early blend access</li>
         </ul>
-        <a href="login.html" class="btn btn-outline-gold w-100" style="justify-content:center;">Choose Apothecary</a>
+        <a href="login.html" class="btn btn-gold w-100" style="justify-content:center;">Choose Apothecary</a>
       </div>
     </div>
 
@@ -146,9 +147,13 @@
     </div>
     <div style="overflow-x:auto;border-radius:var(--r-xl);box-shadow:var(--shadow-lg);border:1px solid var(--border-color);" data-aos>
       <table class="compare-table" role="table">
+        <colgroup>
+          <col style="width:28%">
+          <col span="4" style="width:18%">
+        </colgroup>
         <thead>
           <tr>
-            <th style="min-width:220px;">Feature</th>
+            <th>Feature</th>
             <th style="text-align:center;">Starter</th>
             <th style="text-align:center;">Garden</th>
             <th style="text-align:center;background:rgba(45,74,62,0.06);">Wellness</th>
@@ -314,7 +319,7 @@ toggle.addEventListener('click', () => { isAnnual = !isAnnual; toggle.classList.
 toggle.addEventListener('keydown', e => { if (e.key===' '||e.key==='Enter'){e.preventDefault();toggle.click();} });
 </script>
 <style>
-  @media(max-width:1024px){[style*="grid-template-columns:repeat(4"]{display:grid!important;grid-template-columns:1fr 1fr!important;}.pricing-card.featured{transform:scale(1);}}
+    @media(max-width:1024px){[style*="grid-template-columns:repeat(4"]{display:grid!important;grid-template-columns:1fr 1fr!important;}}
   @media(max-width:768px){[style*="grid-template-columns:repeat(4"],[style*="grid-template-columns:repeat(3"]{display:block!important;}[style*="grid-template-columns:repeat(4"]>div,[style*="grid-template-columns:repeat(3"]>div,.addon-card{margin-bottom:1.5rem;}}
   @media(max-width:640px){.compare-table{font-size:0.78rem;}.compare-table th,.compare-table td{padding:0.625rem 0.875rem;}}
 </style>

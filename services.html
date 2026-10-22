@@ -16,8 +16,13 @@
     .service-img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;}
     .service-grid-card:hover .service-img{transform:scale(1.06);}
     .service-cat-badge{position:absolute;top:1rem;left:1rem;background:var(--clr-forest);color:#fff;border-radius:999px;padding:0.3rem 0.875rem;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;}
-    .benefit-row{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.25rem;}
-    .benefit-icon{width:44px;height:44px;border-radius:var(--r-md);background:var(--clr-sage-mist);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+    .benefit-list{display:grid;grid-auto-rows:1fr;gap:1.25rem;}
+    .benefit-row{display:flex;align-items:stretch;gap:1rem;}
+    .benefit-icon{width:44px;height:44px;border-radius:var(--r-md);background:var(--clr-sage-mist);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;align-self:flex-start;}
+    .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;grid-auto-rows:1fr;}
+    .stat-card{background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);text-align:center;transition:all 0.3s;display:flex;flex-direction:column;}
+    .stat-card p{font-size:0.82rem;color:var(--text-secondary);flex:1;}
+    @media(max-width:640px){.stat-grid{grid-template-columns:1fr;}}
     .process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem;position:relative;}
     .process-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--r-xl);padding:2rem 1.25rem 1.75rem;text-align:center;position:relative;transition:transform 0.35s ease,box-shadow 0.35s ease,border-color 0.35s ease;}
     .process-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(201,168,76,0.35);}
@@ -40,12 +45,12 @@
 <section class="page-hero">
   <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;opacity:0.1;"></div>
   <div class="container" style="position:relative;z-index:1;">
+    <div class="breadcrumb" style="margin-bottom:1.5rem;" data-aos data-aos-delay="300">
+      <a href="index.html">Home</a><span class="breadcrumb-sep">Services</span>
+    </div>
     <div class="hero-badge" style="justify-content:center;margin-bottom:1.5rem;" data-aos>What We Offer</div>
     <h1 data-aos data-aos-delay="100">Our <em style="color:var(--clr-gold-light);">Services</em></h1>
     <p style="color:rgba(255,255,255,0.7);max-width:560px;margin:1.5rem auto 0;line-height:1.8;" data-aos data-aos-delay="200">From personalised consultations to curated subscription boxes — every service is crafted to transform your wellness journey through the power of botanical medicine.</p>
-    <div class="breadcrumb" style="margin-top:2rem;" data-aos data-aos-delay="300">
-      <a href="index.html">Home</a><span class="breadcrumb-sep">Services</span>
-    </div>
   </div>
 </section>
 
@@ -172,7 +177,7 @@
         <div class="section-label">Why Choose Us</div>
         <h2 class="section-title">The Verdana <em>Difference</em></h2>
         <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:2rem;">We're not a supplements company that happens to sell tea. We're botanists, herbalists, and wellness advocates who happen to run a business.</p>
-        <div>
+        <div class="benefit-list">
           <div class="benefit-row">
             <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.3-2.7.1-4 1-4.9 1.7z"/></svg></div>
             <div><strong style="display:block;margin-bottom:0.25rem;">Wild-Harvested &amp; Organic Only</strong><span style="font-size:0.875rem;color:var(--text-secondary);">We never compromise. Every ingredient is certified organic or sustainably wild-harvested, tested for pesticide residues before acceptance.</span></div>
@@ -192,24 +197,24 @@
         </div>
       </div>
       <div data-aos="fade-left">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
-          <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);text-align:center;transition:all 0.3s;" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
+        <div class="stat-grid">
+          <div class="stat-card" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
             <div class="value-icon" style="justify-content:center;margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:44px;height:44px;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
             <h5 style="margin-bottom:0.5rem;">Award-Winning</h5>
             <p style="font-size:0.82rem;color:var(--text-secondary);">12 international awards for quality &amp; sustainability</p>
           </div>
-          <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);text-align:center;transition:all 0.3s;margin-top:1.5rem;" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
+          <div class="stat-card" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
             <div class="value-icon" style="justify-content:center;margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:44px;height:44px;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
             <h5 style="margin-bottom:0.5rem;">Global Sourcing</h5>
             <p style="font-size:0.82rem;color:var(--text-secondary);">Direct relationships with 80+ farms in 32 countries</p>
           </div>
-          <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);text-align:center;transition:all 0.3s;margin-top:-0.75rem;" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
+          <div class="stat-card" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
             <div class="value-icon" style="justify-content:center;margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:44px;height:44px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
             <h5 style="margin-bottom:0.5rem;">4.9 Rating</h5>
             <p style="font-size:0.82rem;color:var(--text-secondary);">From 12,000+ verified customer reviews</p>
           </div>
-          <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);text-align:center;transition:all 0.3s;" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
-            <div class="value-icon" style="justify-content:center;margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:44px;height:44px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div class="stat-card" onmouseover="this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.boxShadow=''">
+            <div class="value-icon" style="justify-content:center;margin-bottom:1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:44px;height:44px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 1 1 2 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
             <h5 style="margin-bottom:0.5rem;">30-Day Guarantee</h5>
             <p style="font-size:0.82rem;color:var(--text-secondary);">Full refund if not completely satisfied</p>
           </div>

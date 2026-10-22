@@ -234,7 +234,7 @@ h6 { font-size: var(--fs-lg); }
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  padding: 0.875rem 2.25rem;
+  padding: 0.65rem 2.25rem;
   border-radius: var(--r-full);
   font-family: var(--ff-body);
   font-size: var(--fs-sm);
@@ -311,9 +311,9 @@ h6 { font-size: var(--fs-lg); }
   color: #fff;
 }
 
-.btn-sm { padding: 0.625rem 1.5rem; font-size: var(--fs-xs); }
-.btn-lg { padding: 1.125rem 2.75rem; font-size: var(--fs-base); }
-.btn-xl { padding: 1.375rem 3.25rem; font-size: var(--fs-lg); }
+.btn-sm { padding: 0.5rem 1.5rem; font-size: var(--fs-xs); }
+.btn-lg { padding: 0.7rem 2.75rem; font-size: var(--fs-base); }
+.btn-xl { padding: 0.75rem 3.25rem; font-size: var(--fs-lg); }
 
 /* ─── CARDS ─── */
 .card {
@@ -343,6 +343,7 @@ h6 { font-size: var(--fs-lg); }
 
 /* ─── NAVBAR ─── */
 .navbar {
+  --nav-control-h: 2.5rem;
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
@@ -364,28 +365,39 @@ h6 { font-size: var(--fs-lg); }
   color: var(--clr-gold);
   letter-spacing: 0.02em;
   line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .nav-brand span { color: var(--clr-sage-light); font-weight: 300; }
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
   gap: var(--sp-8);
 }
 .nav-links {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
   gap: var(--sp-6);
+  height: var(--nav-control-h);
 }
 .nav-link {
+  /* Same control height as the toggles / CTA so the whole header row
+     lines up on one baseline with consistent height */
+  display: inline-flex;
+  align-items: center;
+  height: var(--nav-control-h);
   font-size: var(--fs-sm);
   font-weight: 500;
   /* Pure white: top navbar always sits on a dark hero/overlay.
      (var(--clr-white) remaps to dark in dark-mode — unreadable here.) */
   color: #fff;
   position: relative;
-  padding: 0.25rem 0;
+  padding: 0;
   letter-spacing: 0.02em;
+  white-space: nowrap;
   transition: color var(--t-fast);
 }
 .navbar.scrolled .nav-link { color: var(--text-primary); }
@@ -393,7 +405,8 @@ h6 { font-size: var(--fs-lg); }
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px; left: 0;
+  /* Hug the text now that the link fills the full control height */
+  bottom: calc(50% - 0.6em); left: 0;
   width: 0; height: 2px;
   background: var(--clr-gold);
   transition: width var(--t-base);
@@ -406,7 +419,15 @@ h6 { font-size: var(--fs-lg); }
 .nav-actions {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   gap: var(--sp-3);
+}
+.nav-actions .btn {
+  height: var(--nav-control-h);
+  padding-block: 0;
+  padding-inline: var(--sp-6);
+  font-size: var(--fs-xs);
+  line-height: 1;
 }
 
 /* Dropdown */
@@ -450,8 +471,12 @@ h6 { font-size: var(--fs-lg); }
 .hamburger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
-  padding: var(--sp-2);
+  width: var(--nav-control-h);
+  height: var(--nav-control-h);
+  padding: 0;
   cursor: pointer;
 }
 .hamburger span {
@@ -536,7 +561,7 @@ h6 { font-size: var(--fs-lg); }
 
 /* ─── THEME TOGGLE ─── */
 .theme-toggle {
-  width: 40px; height: 40px;
+  width: var(--nav-control-h); height: var(--nav-control-h);
   border-radius: var(--r-full);
   display: flex; align-items: center; justify-content: center;
   background: rgba(255,255,255,0.1);
@@ -609,7 +634,7 @@ h6 { font-size: var(--fs-lg); }
 .hero-title {
   font-size: clamp(2.8rem, 7vw, 6rem);
   font-family: var(--ff-heading);
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -670,7 +695,7 @@ h6 { font-size: var(--fs-lg); }
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--clr-gold);
   margin-bottom: var(--sp-1);
-  font-weight: 700;
+  font-weight: 600;
 }
 .stat-item p {
   font-size: var(--fs-xs);
@@ -849,10 +874,10 @@ h6 { font-size: var(--fs-lg); }
 .pricing-card.featured {
   background: linear-gradient(135deg, var(--clr-forest) 0%, var(--clr-forest-deep) 100%);
   border-color: var(--clr-gold);
-  transform: scale(1.04);
   box-shadow: var(--shadow-xl);
 }
 .pricing-card.featured * { color: rgba(255,255,255,0.9) !important; }
+.pricing-card.featured .btn-gold { color: var(--clr-forest-deep) !important; }
 .pricing-card.featured h3,
 .pricing-card.featured .price-amount { color: #fff !important; }
 .pricing-badge {
@@ -1017,7 +1042,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 .footer-heading {
   font-family: var(--ff-body);
   font-size: var(--fs-xs);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--clr-gold);
@@ -1357,13 +1382,26 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 .shadow-lg { box-shadow: var(--shadow-lg); }
 
 /* ─── RESPONSIVE UTILITIES ─── */
+/* Compact desktop header: tighten before the links can wrap */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav-inner { gap: var(--sp-6); }
+  .nav-brand { font-size: var(--fs-xl); }
+  /* Keep the links from looking bunched next to the wide edge gaps */
+  .nav-links { gap: 1.25rem; }
+  .nav-link { font-size: 0.875rem; }
+  .nav-actions { gap: var(--sp-2); }
+  .nav-actions .btn { padding-inline: var(--sp-3); }
+}
+/* Switch to the drawer while there is still room for one clean row */
+@media (max-width: 991px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
 @media (max-width: 768px) {
   .hide-mobile { display: none !important; }
   /* Keep .nav-actions visible: it holds the hamburger (hiding the
      parent would hide the hamburger too and lock mobile users out) */
-  .nav-links { display: none; }
   .nav-actions { display: flex; gap: var(--sp-2); }
-  .hamburger { display: flex; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .g-2.responsive { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-8); }
@@ -1633,11 +1671,12 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 .accordion-header:hover { color: var(--clr-forest); }
 .accordion-icon {
   font-size: 1.25rem;
-  color: var(--clr-sage);
+  color: #4A7351;
   transition: transform 0.35s;
   flex-shrink: 0;
   line-height: 1;
 }
+[data-theme="dark"] .accordion-icon { color: var(--clr-sage-light); }
 .accordion-item.open .accordion-icon { transform: rotate(45deg); }
 .accordion-body {
   overflow: hidden;
@@ -1660,6 +1699,8 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   padding: 2.5rem 2rem;
   transition: all 0.5s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .pricing-card:hover {
   transform: translateY(-6px);
@@ -1670,10 +1711,9 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   background: linear-gradient(135deg, var(--clr-forest), var(--clr-forest-deep));
   border-color: var(--clr-gold);
   box-shadow: var(--shadow-xl);
-  transform: scale(1.03);
   color: rgba(255,255,255,0.85);
 }
-.pricing-card.featured:hover { transform: scale(1.03) translateY(-6px); }
+.pricing-card.featured:hover { transform: translateY(-6px); }
 .pricing-badge {
   position: absolute;
   top: -12px;
@@ -1700,8 +1740,8 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 .pricing-card.featured .price-amount { color: var(--clr-gold); }
 .price-period { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
 .pricing-card.featured .price-period { color: rgba(255,255,255,0.5); }
-.price-features { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.625rem; }
-.price-feature { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.875rem; color: var(--text-secondary); }
+.price-features { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.625rem; flex: 1 0 auto; }
+.price-feature { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.875rem; color: var(--text-secondary); flex: 1 0 auto; }
 .pricing-card.featured .price-feature { color: rgba(255,255,255,0.75); }
 .check { color: var(--clr-sage); font-weight: 700; flex-shrink: 0; }
 .check.x { color: var(--border-color); }
@@ -1888,10 +1928,12 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 }
 
 /* BUTTON SIZES ──────────────────────────────── */
-.btn-sm  { padding: 0.5rem 1.125rem; font-size: 0.82rem; }
-.btn-lg  { padding: 1rem 2.25rem; font-size: 1rem; }
-.btn-xl  { padding: 1.1rem 2.5rem; font-size: 1.05rem; }
-.btn { display: inline-flex; align-items: center; gap: 0.5rem; border-radius: var(--r-full); font-family: var(--ff-body); font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; border: 2px solid transparent; padding: 0.875rem 2rem; font-size: 0.9rem; }
+/* Trimmed vertical padding so CTAs sit shorter and denser.
+   Base rule comes first so the size modifiers below actually apply. */
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; border-radius: var(--r-full); font-family: var(--ff-body); font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; border: 2px solid transparent; padding: 0.65rem 1.75rem; font-size: 0.9rem; }
+.btn-sm  { padding: 0.5rem 1.25rem; font-size: 0.85rem; }
+.btn-lg  { padding: 0.7rem 2rem; font-size: 0.95rem; }
+.btn-xl  { padding: 0.75rem 2.25rem; font-size: 1rem; }
 .btn-primary { background: var(--clr-forest); color: #fff; }
 .btn-primary:hover { background: var(--clr-forest-deep); box-shadow: var(--shadow-md); }
 .btn-gold { background: var(--clr-gold); color: var(--clr-forest-deep); }
@@ -2182,8 +2224,8 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 /* ── ≤480px (large phones) ── */
 @media (max-width: 480px) {
   .container { padding-inline: 1rem; }
+  .navbar { --nav-control-h: 36px; }
   .nav-inner { gap: 0.75rem; }
-  .theme-toggle { width: 36px; height: 36px; }
   .section { padding-block: clamp(3rem, 12vw, 4rem); }
   [style*="grid-template-columns:repeat(3"],
   [style*="grid-template-columns:repeat(4"],
@@ -2195,16 +2237,16 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   .newsletter-btn { border-radius: 0 0 var(--r-lg) var(--r-lg); padding: 1rem; }
   /* Scroll wide tables instead of crushing them */
   .compare-table { min-width: 620px; font-size: 0.78rem; }
-  .btn-lg { padding: 1rem 1.5rem; font-size: 0.95rem; }
-  .btn-xl { padding: 1rem 1.5rem; font-size: 0.95rem; }
+  .btn-lg { padding: 0.8rem 1.5rem; font-size: 0.95rem; }
+  .btn-xl { padding: 0.8rem 1.5rem; font-size: 0.95rem; }
   .breadcrumb { font-size: 0.78rem; }
 }
 
 /* ── ≤360px (small phones) ── */
 @media (max-width: 360px) {
   .container { padding-inline: 0.875rem; }
-  .btn { padding: 0.8rem 1.4rem; font-size: 0.82rem; }
-  .btn-lg, .btn-xl { padding: 0.9rem 1.25rem; font-size: 0.88rem; }
+  .btn { padding: 0.65rem 1.4rem; font-size: 0.82rem; }
+  .btn-lg, .btn-xl { padding: 0.75rem 1.25rem; font-size: 0.88rem; }
   .section-label { font-size: 0.65rem; padding: 0.3rem 0.875rem; }
   .countdown-num { font-size: 1.6rem !important; }
   .price-amount { font-size: 2.5rem !important; }

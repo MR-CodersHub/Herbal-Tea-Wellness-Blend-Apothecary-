@@ -23,6 +23,14 @@
     .ingredient-chip:hover { border-color:var(--clr-sage);color:var(--clr-forest);transform:translateY(-2px);box-shadow:var(--shadow-sm); }
     .wellness-goal-btn { padding:0.625rem 1.5rem;border-radius:999px;font-size:0.85rem;font-weight:600;border:1.5px solid var(--border-color);background:var(--bg-card);color:var(--text-secondary);cursor:pointer;transition:all 0.3s; }
     .wellness-goal-btn.active, .wellness-goal-btn:hover { background:var(--clr-forest);color:#fff;border-color:var(--clr-forest); }
+    /* ── Wellness Goals: Immunity & Stress cards — the copy above the CTA
+       differs in height, so the buttons landed ~26px apart. Make each card a
+       flex column and push the CTA to the card bottom to share one baseline. */
+    .goal-card { display:flex;flex-direction:column; }
+    .goal-card > .btn { margin-top:auto;align-self:flex-start; }
+    /* Flex items stretch to the column width by default — keep the pill
+       tag shrink-wrapped to its label instead of spanning the whole card. */
+    .goal-card > .niche-tag { align-self:flex-start; }
     .blend-timeline-item { display:flex;gap:2rem;margin-bottom:3rem;align-items:flex-start; }
     .blend-timeline-dot { width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--clr-forest),var(--clr-sage));display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;box-shadow:0 8px 24px rgba(45,74,62,0.3); }
     /* ── Our Process: bordered premium cards ── */
@@ -33,6 +41,21 @@
     .process-card:hover { transform:translateY(-6px);border-color:rgba(201,168,76,0.55);box-shadow:0 20px 45px rgba(0,0,0,0.12); }
     .process-card:hover::before { opacity:1; }
     .process-badge { display:inline-flex;align-items:center;font-size:0.7rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--clr-forest);background:var(--clr-sage-mist);border:1px solid var(--border-color);border-radius:999px;padding:0.35rem 0.9rem;margin-bottom:1rem; }
+    /* Dark mode: --clr-sage-mist collapses to the card colour, so the forest
+       badge text fell to ~1.5:1 (invisible). Tint the pill + lighten the text. */
+    [data-theme="dark"] .process-badge { background:rgba(107,143,113,0.18);color:var(--clr-sage-light);border-color:rgba(107,143,113,0.35); }
+    /* "Our Process" label: keep a visible edge in both themes. */
+    .process-label { border-color:var(--clr-forest);box-shadow:0 2px 10px rgba(45,74,62,0.10); }
+    [data-theme="dark"] .process-label { border-color:rgba(168,197,160,0.45);color:var(--clr-sage-light);box-shadow:0 2px 10px rgba(0,0,0,0.35); }
+    /* Find Your Blend: numbered step circles. Colours live here (not inline)
+       so the global dark-mode [style*=...] overrides can't recolour the digit. */
+    .quiz-step-num { width:40px;height:40px;border-radius:50%;background:var(--clr-sage);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:700;flex-shrink:0;box-shadow:0 2px 6px rgba(45,74,62,0.15); }
+    .quiz-step-num--gold { background:var(--clr-gold);color:var(--clr-forest-deep);box-shadow:0 2px 6px rgba(201,168,76,0.25); }
+    [data-theme="dark"] .quiz-step-num { background:rgba(107,143,113,0.24);color:var(--clr-sage-light);box-shadow:0 2px 6px rgba(0,0,0,0.35); }
+    [data-theme="dark"] .quiz-step-num--gold { background:rgba(201,168,76,0.22);color:var(--clr-gold-light);box-shadow:0 2px 6px rgba(0,0,0,0.35); }
+    /* Quiz intro paragraph: --text-secondary on the cream band sat at 4.45:1 (needs 4.5). */
+    .quiz-intro { color:#5F5F5F; }
+    [data-theme="dark"] .quiz-intro { color:var(--text-secondary); }
     .process-card .step-icon { width:72px;height:72px;margin:0 auto 1.1rem;position:relative;z-index:1;border:3px solid var(--bg-card);outline:2px solid var(--border-color);flex-shrink:0; }
     .process-card h5 { margin-bottom:0.75rem;position:relative;z-index:1; }
     .process-card p { position:relative;z-index:1; }
@@ -184,7 +207,7 @@
 
     <!-- Immunity + Stress side by side -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem;">
-      <div id="immunity" style="background:var(--bg-card);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border-color);scroll-margin-top:100px;" data-aos>
+      <div id="immunity" class="goal-card" style="background:var(--bg-card);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border-color);scroll-margin-top:100px;" data-aos>
         <div class="niche-tag" style="background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.3);color:var(--clr-gold);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg> Immunity</div>
         <h4 style="font-size:1.6rem;margin:1rem 0;">Immunity Shield</h4>
         <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem;">Fortify your immune system year-round with elderberry, echinacea, astragalus, and turmeric — nature's most powerful immune-activating botanicals.</p>
@@ -199,7 +222,7 @@
         </div>
         <a href="service-detail.html" class="btn btn-gold btn-sm">Shop Immunity →</a>
       </div>
-      <div id="stress" style="background:var(--bg-card);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border-color);scroll-margin-top:100px;" data-aos data-aos-delay="150">
+      <div id="stress" class="goal-card" style="background:var(--bg-card);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border-color);scroll-margin-top:100px;" data-aos data-aos-delay="150">
         <div class="niche-tag" style="background:rgba(196,120,110,0.1);border-color:rgba(196,120,110,0.3);color:var(--clr-rose);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> Stress Relief</div>
         <h4 style="font-size:1.6rem;margin:1rem 0;">Calm &amp; Balance</h4>
         <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem;">Adaptogenic herbs like ashwagandha, rhodiola, and holy basil help your body adapt to stress, reduce cortisol, and promote mental clarity and emotional balance.</p>
@@ -270,7 +293,7 @@
 <section class="section bg-primary" aria-label="How our blending process works">
   <div class="container">
     <div class="text-center mb-12">
-      <div class="section-label mx-auto" data-aos>Our Process</div>
+      <div class="section-label mx-auto process-label" data-aos>Our Process</div>
       <h2 class="section-title" data-aos data-aos-delay="100">From <em>Garden to Cup</em> — 4 Steps</h2>
     </div>
     <div class="process-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;align-items:stretch;" role="list">
@@ -362,18 +385,18 @@
       <div data-aos="fade-right">
         <div class="section-label">Find Your Blend</div>
         <h2 class="section-title">Not Sure Where<br/>to <em>Start?</em></h2>
-        <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:2rem;">Take our 2-minute wellness quiz and receive a personalised blend recommendation from our herbalists — absolutely free, no purchase required.</p>
+        <p class="quiz-intro" style="line-height:1.9;margin-bottom:2rem;">Take our 2-minute wellness quiz and receive a personalised blend recommendation from our herbalists — absolutely free, no purchase required.</p>
         <div style="background:var(--bg-card);border-radius:var(--r-xl);padding:2rem;border:1px solid var(--border-color);margin-bottom:1.5rem;">
           <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--clr-sage-mist);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">1</div>
+            <div class="quiz-step-num">1</div>
             <div><strong>Tell us your wellness goal</strong><br/><span style="font-size:0.85rem;color:var(--text-secondary);">Sleep, digestion, energy, immunity, stress, or detox</span></div>
           </div>
           <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--clr-sage-mist);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">2</div>
+            <div class="quiz-step-num">2</div>
             <div><strong>Share your lifestyle &amp; preferences</strong><br/><span style="font-size:0.85rem;color:var(--text-secondary);">Taste, restrictions, and health history</span></div>
           </div>
           <div style="display:flex;align-items:center;gap:1rem;">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--clr-gold-pale);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">3</div>
+            <div class="quiz-step-num quiz-step-num--gold">3</div>
             <div><strong>Receive your personalised recommendation</strong><br/><span style="font-size:0.85rem;color:var(--text-secondary);">Via email within minutes, with a 15% discount code</span></div>
           </div>
         </div>
